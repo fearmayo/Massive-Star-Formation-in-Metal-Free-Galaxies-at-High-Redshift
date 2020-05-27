@@ -1,0 +1,673 @@
+\documentclass[graphics, twocolumn, usenatbib]{mn2e}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{natbib} 
+\usepackage{epsfig} 
+\usepackage{graphicx} 
+\usepackage{color}
+%\usepackage{deluxetable} 
+\usepackage{aas_macros} 
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[title]{appendix}
+\usepackage{hyperref}	% Hyperlinks
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+\usepackage[caption=false]{subfig}
+\newcommand{\lya}{Lyman-$\alpha$~}
+\newcommand{\gad}{\textsc{Gadget-2~}}
+\newcommand{\enzo}{\texttt{Enzo~}}
+\newcommand{\enzoc}{\texttt{Enzo}}
+\newcommand{\cloudy}{\texttt{Cloudy~}}
+\newcommand{\grackle}{\texttt{Grackle-2.1~}}
+\newcommand{\gracklec}{\texttt{Grackle-2.1}}
+\newcommand{\enzolat}{\texttt{Enzo-2.3}}
+\newcommand{\cosmos}{\textsc{Cosmos~}}
+
+\newcommand{\darwin}{\textsc{Darwin~}}
+\newcommand{\enzoamr}{\texttt{Enzo(AMR)~}}
+\newcommand{\enzost}{\texttt{Enzo(static)~}}
+\newcommand{\lyb}{Lyman-$\beta$~} 
+\newcommand{\eg}{{\it e.g.~}}
+\newcommand{\kms} {km $\rm{s^{-1}}$}
+\newcommand{\mpch} {\rm $h^{-1}$ Mpc\,\,} 
+\newcommand{\kpch} {\rm $h^{-1}$ kpc\,\,} 
+\newcommand{\msolar} {$\rm{M_{\odot}}~$}
+\newcommand{\msolarc} {$\rm{M_{\odot}}$}
+\newcommand{\msolaryr} {$\rm{M_{\odot}/yr}~$}
+\newcommand{\msolaryrc} {$\rm{M_{\odot}/yr}$}
+\newcommand{\lsolar} {$\rm{L_{\odot}}~$}
+\newcommand{\lsolarc} {$\rm{L_{\odot}}$}
+\newcommand{\zsolar} {$\rm{Z_{\odot}}~$}
+\newcommand{\zsolarc} {$\rm{Z_{\odot}}$}
+\newcommand{\rsolar} {$\rm{R_{\odot}}~$}
+\newcommand{\molH} {$\rm{H_2}$~}
+\newcommand{\molHc} {$\rm{H_2}$}
+\newcommand{\J} {$\rm{10^{-21}\ erg\ cm^{-2}\ s^{-1}\ Hz^{-1}\ sr^{-1}}$}
+\newcommand{\inten} {$\rm{ erg\ cm^{-2}\ s^{-1}\ Hz^{-1}\ sr^{-1}}$~}
+\newcommand{\JU} {$\rm{ erg\ cm^{-2}\ s^{-1}\ Hz^{-1}\ sr^{-1}}$}
+\newcommand{\JLW} {J$_{LW}$}
+\newcommand{\healpix} {\texttt{HEALPix~}}
+\newcommand{\smartstar} {\texttt{SmartStar~}}
+\newcommand{\smartstars} {\texttt{SmartStars~}}
+\newcommand{\smartstarsc} {\texttt{SmartStars}}
+\newcommand{\smartstarc} {\texttt{SmartStar}}
+\newcommand{\rarepeak} {\textit{Rarepeak~}}
+\newcommand{\normal} {\textit{Normal~}}
+\newcommand{\void} {\textit{Void~}}
+\newcommand{\voidc} {\textit{Void}}
+\newcommand{\ha} {\texttt{HaloA~}}
+\newcommand{\hb} {\texttt{HaloB~}}
+\newcommand{\hac} {\texttt{HaloA}}
+\newcommand{\hbc} {\texttt{HaloB}}
+
+\def\mgh#1{{\bf MH:  #1}}
+\def\jr#1{{\color{blue} \bf JR:  #1}}
+\def\pj#1{{\bf PJ:  #1}}
+\newcommand{\jhw}[1]{{\color{red} \bf JHW: #1}}
+
+
+\def\etal{{\it et al.}~}
+
+\begin{document}
+\title{Massive Star Formation in Metal Free Galaxies at High Redshift}
+\author[J. A. Regan, J. H. Wise,  T. E. Woods, T.P. Downes, B.W. O'Shea \&  M.L. Norman]{John A. Regan$^{1,2}$\thanks{E-mail:john.regan@mu.ie},
+  John H. Wise$^{3}$, Tyrone E. Woods$^{4}$, Turlough P. Downes$^{2}$, \newauthor Brian W. O'Shea$^{5,6,7,8}$ \& Michael L. Norman$^9$\\
+  $^1$Department of Theoretical Physics, Maynooth University, Ireland\\
+  $^2$Centre for Astrophysics \& Relativity, School of Mathematical Sciences, Dublin City University, Glasnevin, D09 W6Y4, Ireland\\
+  $^3$Center for Relativistic Astrophysics, Georgia Institute of Technology, 837 State Street, Atlanta, GA 30332, USA\\
+  $^4$National Research Council of Canada, Herzberg Astronomy \& Astrophysics Research Centre, 5071 West Saanich Road, Victoria, BC V9E 2E7, Canada\\
+  $^5$National Superconducting Cyclotron Laboratory, Michigan State, University, MI, 48823, USA\\
+  $^6$Department of Physics and Astronomy, Michigan State University,MI, 48823, USA\\
+  $^7$Department of Computational Mathematics, Science and Engineering, Michigan State University, MI, 48823, USA\\    
+  $^8$Joint Institute for Nuclear Astrophysics - Center for the Evolution of the Elements, USA\\
+  $^9$Center for Astrophysics and Space Sciences, University of California, San Diego, 9500 Gilman Dr, La Jolla, CA 92093\\}
+
+\pubyear{2020}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+\begin{abstract}
+Soon!
+\end{abstract}
+\section{Introduction} \label{Sec:Introduction}
+
+
+\textbf{The goal of this study is to model the formation and evolution of (super-)massive star
+  formation in haloes that are exposed to moderate LW backgrounds which when combined with the effects
+  of dynamical heating can suppresses star formation below the atomic cooling limit.
+  Such haloes have recently been identified in the Renaissance datasets \citep{Wise_2019, Regan_2019}
+  as promising candidates for forming (super-)massive stars.  To pursue this research we re-simulate
+  two haloes from the original Renaissance simulations. We designate
+  these haloes as \ha and \hbc. Both haloes were chosen as they exhibited near isothermal
+  collapse of their inner core in the original Renaissance datasets as shown by \cite{Regan_2019}.
+  They were therefore identified as among the most promising candidates for SMS formation. Both
+  haloes were exposed to moderate levels of LW radiation from nearby radiation sources as well as
+  constant mergers which dynamically heated the gas within the haloes. To further understand the
+  impact of the LW field we re-simulate \hb with no LW radiation. This is done to determine if a
+  halo can remain star-free due to only dynamical heating effects or if the LW field still
+  remains a critical component. \hac, on the other-hand, is re-simulated with a LW background
+  composed of both local source contributions and background contributions. \\
+  \indent We find that \ha forms stars with masses up to 6000 \msolar but that the accretion
+  rate onto individual proto-stars always declines as the star's gas supply is depleted. In the
+  re-simulation of \hbc, without a LW field, we find that the halo undergoes premature collapse
+  (compared to the original case where a LW field of J$_{21} \sim 2$ \JLW existed). In \hb the
+  most massive star in the halo has a mass of approximately 173 \msolar. The impact of ionising
+  radiation is not considered in these simulations but post-processing of the stellar feedback
+  using \cloudy \citep{Ferland_2017} is instead used to gauge the point at which ionising radiation
+  would have suppressed further star formation in each halo. }
+
+\section{Methods} \label{Sec:Methods}
+
+
+\subsection{Renaissance Simulation Suite} \label{Sec:Renaissance}
+The original Renaissance simulations were carried out on the Blue Waters supercomputer facility
+using the adaptive mesh refinement code \enzo\citep{Enzo_2014, Enzo_2019}\footnote{https://enzo-project.org/}.
+\enzo has been extensively used to study the formation of structure in the early universe
+\citep{Abel_2002, OShea_2005b, Turk_2012, Wise_2012b, Wise_2014, Regan_2015, Regan_2017}.
+In particular \enzo includes a ray tracing scheme to follow the propagation of radiation from
+star formation and black hole formation \citep{WiseAbel_2011} as well as a detailed multi-species
+chemistry model that tracks the formation and evolution of nine species \citep{Anninos_1997,
+  Abel_1997}. In particular the photo-dissociation of \molH is followed, which is a critical
+ingredient for determining the formation of the first metal-free stars \citep{Abel_2000}. 
+
+
+
+The datasets which formed the basis for this study were originally derived from a simulation of the
+universe in a 28.4 \mpch on the side box using the WMAP7 best fit cosmology. Initial conditions
+were generated using MUSIC \citep{Hahn_2011} at z = 99. A low resolution simulation was run until
+z = 6 in order to identify three different regions for re-simulation \citep{Chen_2014}. The volume
+was then smoothed on a physical scale of 5 comoving Mpc, and regions of high
+($\langle\delta\rangle \equiv \langle\rho/\rangle(\Omega_M \rho_C) - 1 \simeq 0.68$),
+average ($\langle\delta\rangle \sim 0.09)$), and low ($\langle\delta\rangle \simeq -0.26)$)
+ mean density were chosen for re-simulation. 
+ These sub-volumes were then referred to as the \rarepeak region, the \normal region  and the \void
+ region. The \rarepeak region has a comoving volume of 133.6 Mpc$^3$, the \normal region and
+ the \void regions have comoving volumes of 220.5 Mpc$^3$. Each region was then re-simulated with
+ an effective initial resolution of $4096^3$ grid cells and particles within these sub-volumes of
+ the larger initial simulation. This gives a maximum dark matter particle mass resolution
+ of $2.9 \times 10^4$ \msolarc. For the re-simulations of the \voidc, \normal and \rarepeak regions
+ further refinement was allowed throughout the sub-volumes up to a maximum refinement level of 12,
+ which corresponded to 19 pc comoving spatial resolution. Given that the regions focus on different
+ over-densities each region was evolved forward in time to different epochs. The \rarepeak region,
+ being the most over-dense and hence the most computationally demanding at earlier times, was run
+ until z = 15. The \normal region ran until z = 11.6, and the \void region ran until z = 8. In all
+ of the regions the halo mass function was very well resolved down to M$_{halo} \sim 2 \times 10^6$
+ \msolarc. The \rarepeak regions contained 822 galaxies with masses larger than $10^9$ \msolar at
+ z = 15, the \normal region contained 758 such galaxies at z = 11.6, while the \void region
+ contained 458 such galaxies at z = 8. 
+
+ As noted already in \S \ref{Sec:Introduction}, in W19 we examined two metal-free and star-free
+ haloes from the final output of the \rarepeak simulation and re-simulated those two haloes at
+ significantly higher resolution (maximum spatial resolution, $\Delta x \sim 60$ au) until the
+ point of collapse. This re-simulation allowed us to investigate the evolution of the inner halo
+ and the mass distribution of the clumps formed. However, no star formation prescription was
+ employed during this re-simulation. In \cite{Regan_2019} we subsequently investigated the occurance
+ of metal-free and star-free atomic cooling haloes across all of the Renaissance datasets. We found
+ a total of 79 such haloes in the
+ \rarepeak outputs and 3 such haloes in the \normal outputs. None were found in the \void outputs.
+ Of the 79 haloes which were metal-free and star free above the atomic cooling limit some
+ showed almost ideal isothermal collapse consistent with has previously been identified
+ as ideal conditions for forming SMSs \citep{Inayoshi_2014, Becerra_2015, Latif_2016a,
+   Regan_2017, Chon_2017b, Regan_2018b}. Of those haloes which collapsed isothermally we then
+ selected two haloes for re-simulation in this study. \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%Visualisations of haloes at start and end %%%%%%%%%%%%%%%%%
+\begin{figure*}
+\centering
+\begin{minipage}{175mm}      \begin{center} 
+\centerline{
+\includegraphics[width=0.52\textwidth]{FIGURES/Combined.png}
+\includegraphics[width=0.52\textwidth]{FIGURES/MassHistory.png}}
+\caption{\textit{Left Panel:} The LW background rate imposed on Halo A for the re-simulation. Halo B is not shown
+  as no LW background is imposed on Halo B. The LW rates
+  are composed of local sources, plus a LW background from Wise et al. (2012), extracted from the original
+  Renaissance simulations. The local sources dominate over the background by at least an order of magnitude at
+  all time. In the original
+  Renaissance simulations \ha (and \hb) remained metal-free and star-free until z = 15.6 (and
+  z = 15.0 respectively). The redshift of original collapse is marked with a green circle.
+  A black star mark the redshift at which star formation occurs in \ha in the zoom-in simulations.
+  \textit{Right Panel:} The merger history of both \ha and \hb
+  as determined from the original Renaissance simulations. Again we mark we the redshift of first star formation
+  in \ha and \hb as found in the re-simulations with black stars. Note that star formation now occurs significantly
+  earlier in \hb due because no LW background is imposed. In \ha on the other-hand collapse (and star formation) is
+  actually delayed compared to the original star formation by approximately 15 Myr. 
+  }  \label{Fig:LWHistory}
+\end{center} \end{minipage}
+
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+ \subsection{Re-simulation of pristine atomic cooling haloes}
+ In order to re-simulate a halo from the original Renaissance datasets some of the parameters of the
+ simulation  must be adjusted. In order to make the simulation time tractable, refinement
+ must be focused around the target halo. In order to do this we first identified the Lagrangian
+ volume of the target halo at the redshift at which it was found - z = 15.6 for \ha and z = 15.0
+ for \hbc - and tagged each dark matter particle in the Lagrangian volume. Upon restarting
+ the simulation subsequently at z = 20 we then set each of the tagged dark matter particles as
+ ``must-refine-particles''. This meant that any cell, in the simulation, containing one of these
+ particles was allowed to refine. Any cells not containing one of these particles could not refine.
+ This optimisation focuses the refinement solely onto the target halo. In additions to the
+ ``must-refine-particle'' refinement criteria refinement is also based on the Jeans length of the
+ gas with the additional criteria that the Jeans length is always refined by at least 64 cells. 
+ \indent With refinement targeted only on a single halo (and it's progenitors) star formation
+ in the surrounding galaxies was therefore neglected. In order to account for the radiation which
+ would otherwise be emitted by these galaxies we extract the LW emission from the original
+ simulations and create a table of LW values that this target halo is exposed to as a function of
+ redshift. Using the \grackle \citep{Grackle} software library we then use these LW tables as
+ the ``background'' that this halo is exposed to. Additionally, self-shielding to LW radiation is
+ also invoked in the re-simulations based on the \cite{Wolcott-Green_2011} prescription.\\
+ \indent Having now optimised the simulations to focus only on the target halo and also including the
+ external LW effects we also include (dark matter) particle splitting. By splitting the dark matter
+ particles we increase the mass resolution of the simulation so as to match the increased
+ spatial resolution. Dark matter particles are split in \enzo using the prescription
+ of \cite{Kitsionas_2002} and was previously described in \cite{Regan_2015}. By employing
+ particle splitting we reduce the dark matter particle mass to $M_{DM} \sim 170$ \msolarc. \\
+ \indent In order to resolve star formation in the collapsing target haloes we set the maximum
+ refinement level of the simulation to 20. This is an increase of a factor of $2^8 (256)$ compared
+ to the  original simulations and allows us to reach a maximum spatial resolution
+ of $\Delta x \sim 1000 au$. While this (maximum) resolution is less than what was achieved
+ in \cite{Wise_2019} it was necessary as the goal of this re-simulation was not only to follow
+ the collapse of the target halo but to also follow the formation of stars within the collapsing
+ halo for up to 2 Myr following the formation of the first star. At the resolution used in
+ \cite{Wise_2019} this proved intractable and so we reduced the
+ resolution to a maximum refinement by a factor of $2^4 (16)$ as a compromise. Reducing the
+ refinement factor compared to W19 reduced the computational load while still allowing us to
+ resolve star formation at an acceptable resolution. \\
+ \indent In order to model star formation within the collapsing gas cloud we employed a star
+ formation criteria using the methodology first described in \cite{Krumholz_2004}. The implementation
+ in \enzo is described in detail in \cite{Regan_2018a} and \cite{Regan_2018b} and we give a
+ brief overview here for completeness. Stars are formed when all of the following conditions are met:
+\begin{enumerate}
+\item The cell is at the highest refinement level
+\item The cell exceeds the Jeans Density
+\item The flow around the cell is converging along each axis
+\item The cooling time of the cell is less than the freefall time
+\item The cell is at the minimum of the gravitational potential
+\end{enumerate}
+Once the star is formed accretion onto the star is determined by evaluating the mass flux across
+a 4 cell boundary surrounding the star. Initially all stars are assumed to be stars with low surface
+temperatures that are appropriate for main sequence SMSs and less massive proto-stars on the
+Hayashi track. The accretion onto the surface of the embryonic star is given by:
+\begin{equation}
+  \dot{M} = 4\pi \int_S {\rho v_r^- r^2 dr}
+\end{equation}
+where $\dot{M}$ is the mass accretion rate, $S$ is the surface over which we integrate, $\rho$ is the
+density of the cells intersecting the surface, $v_r^-$ is the velocity of cells intersecting
+the surface which have negative radial velocities and $r$ is the radius of our surface.
+The surface, $S$, is the surface of a sphere with radius the accretion radius. As noted above we
+set the accretion radius to be 4 cells. The accretion onto the star is calculated at each timestep,
+however this is likely to be a very noisy metric. To alleviate this to some degree we average
+the accretion rate over intervals of 1 kyr and use that averaged accretion rate as the actual
+accretion rate. The accretion rate is added as an attribute to each star and hence a full
+accretion history of every star is outputted as part of every snapshot. Mergers with other stars
+are also included in the accretion onto the stars. In this case the more massive star retains its
+information (i.e. age, type etc) after the merger event - information on the less massive star is
+lost. The mass of the less massive star is added to the accretion rate of the more massive star for
+that timestep. Stars are merged when they come within an accretion radius of each other.\\
+\indent Each star also has the ability to provide both radiative and mechanical feedback (this is
+most appropriate in the case where the star has transitioned into a (accreting) black hole). As the
+accretion rate onto the star varies the star can transition its type from a SMS, with an inflated
+surface, to a PopIII star. This transitioning only occurs if the accretion rate onto the star either
+never exceeds the critical rate of 0.04 \msolaryr or if the accretion rate onto the star falls below
+the critical accretion rate \citep{Sakurai_2016}. While the star remains bloated the radiative
+feedback from the star is primarily below the hydrogen ionisation limit and is mostly in the
+form of infrared radiation. However, if the accretion rate drops and the star contracts to the
+main sequence then the radiative feedback becomes significantly harder as the effective
+temperature of the star increases dramatically. The radiation from a massive PopIII star is expected
+to peak in the UV. \\
+\indent All stars in this simulation emit radiative feedback below the ionisation threshold of
+hydrogen. As stars in this simulation contract to the main sequence, when the accretion rate onto the
+star drops, radiation above the hydrogen ionisation threshold is not initiated. We found that the
+density gradients produced by the massive PopIII stars proved too steep for the hydrodynamics solver
+currently in place in \enzo (see \cite{Enzo_2014} for details). As a result, for these simulations
+we neglected the impact of ionising feedback. Instead we post-processed the impact of
+ionising feedback with \cloudy and use the results to estimate the point at which the impact of
+radiative feedback on the surrounding gas becomes so strong that the simulation should be terminated.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%Visualisations of haloes at start and end %%%%%%%%%%%%%%%%%
+\begin{figure*} 
+\centering
+\begin{minipage}{175mm}      \begin{center} 
+\centerline{
+\includegraphics[width=0.52\textwidth]{FIGURES/HaloA/Proj_z_number_density_0001.png}
+\includegraphics[width=0.52\textwidth]{FIGURES/HaloB/Proj_z_number_density_0028.png}}
+\caption{Both panels show the projected number density of the region around which the first
+  star forms. \ha is in the left hand panel, \hb in the right hand panel.
+  The legend in each panel gives the mass of each star at the first output time following star
+  formation as well as the age of each star at that time. The extent of each panel is 20 pc (physical). The orange
+  star in each case represents the most massive stars. Stars coloured in red are stars in which the accretion rate
+  exceeds that required for supermassive star formation. Blue stars are those stars (normal PopIII stars) for
+  which the rate is below the critical rate. \ha contains a single initial star. \hb contains two stars
+  at the first output following star formation.  }\label{Fig:ProjectionStart}
+\end{center} \end{minipage}
+
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Post-Processing with Cloudy}
+\label{cloudy:description}
+{\sc Cloudy} \citep{Ferland_2017} is a spectral synthesis code which models radiative transfer through a gas, and its resulting thermal and chemical equilibrium, under a wide range of conditions encompassing those expected for interstellar matter. %For primordial gas in the density and temperature range presently considered, 
+The code relies on a number of databases for computing the behaviour of atoms and molecules, including tabulated recombination coefficients obtained from \cite{Badnell_2003} and \cite{Badnell_2006}, with Case A and B recombination predictions for single-electron systems from \cite{Storey_1995} and He I recombination rates from \cite{Porter_2012}, as well as ionic emission data from the CHIANTI database \citep{Dere_1997,Dere_2012}. Its chief limitation is that it is largely constrained to modelling environments in 1-D and/or assuming spherical symmetry \citep[though see, e.g.,][for recent efforts to extend its implementation to pseudo-3-D problems]{Morisset_2013, Fitzgerald_2020}. For this reason, and because we do not follow the stellar evolution of each formed star in detail, we must make a number of simplifying approximations in using {\sc cloudy} to estimate the impact of ionising feedback. 
+
+For each halo, we consider the ionising feedback at times 503 kyr, 732kyr, and 998kyr for \ha, and times 469 kyr, 732 kyr, 994kyr, and 1354 kyr for \hb. For each snapshot, we divide the stars formed between those which are accreting $> 5 \times 10^{-3} M_{\odot}/$yr, which will evolve on the Hayashi track due to $\rm{H}^{-}$-opacity in their inflated envelopes \citep[e.g.,][]{Hosokawa_2013}, and those accreting below this threshold, which will evolve blue-ward as they contract to become hot ionising sources on the ZAMS \citep{Haemmerle_2017}. We assume that all rapidly-accreting (``red'') stars remain negligible ionising sources, and that all slowly- or non-accreting (``blue'') stars have thermally-relaxed to a main sequence temperature of $\approx 10^{5}$K \citep{Schaerer_2002, Woods_2020}. We further take their luminosities to be approximately Eddington (L $\approx 1.3\times 10^{38} \times (M/M_{\odot})$ erg/s), and their spectra to be well-approximated as blackbodies.
+
+For each blue star, we then model the ionisation state of the surrounding gas assuming spherical symmetry, with the density profile found from the average gas density in successive shells 0.5pc in width centred on each star in the halo, and primordial abundance ratios taken to be 1.0:0.08232:1.6e-10:1e-16 for H:He:Li:Be \citep[consistent with the results of the][table 2, see {\sc cloudy} documentation for further discussion]{Planck_2014}. We assume an inner boundary of $10^{15}$cm and terminate our calculations at the outer boundary of each nebula once either the gas temperature falls to 8000K or the electron fraction falls below 5\%. Modelling the ionized nebula associated with each star in this way does not account for the overlapping of Str{\"o}mgren spheres associated with distinct stars; we address this point and further limitations in $\S$\ref{cloudy:results}.
+
+
+\section{Results}
+
+\subsection{Conditions for (Super-)Massive Star Formation}
+As noted in the \S \ref{Sec:Introduction} the goal of this study is to model the formation of
+potential SMS formation in haloes which are experiencing both LW feedback from nearby galaxies and
+dynamical heating from mergers. Both of these effects suppress the formation of regular PopIII stars
+below the atomic cooling limit and hence may lead to the formation of a SMS in a larger halo. \\
+\indent In the left hand panel of Figure \S \ref{Fig:LWHistory} we show the LW history that \ha is
+exposed to throughout it's re-simulation. As discussed in \S \ref{Sec:Methods} the LW field at the
+location of the halo is determined from the original simulation, which included star formation
+in all of the surrounding haloes. In the re-simulation the AMR grids are focused only around the
+target halo and so the LW field must be imposed as a global background, albeit focused on a single
+halo. As can be seen in the left hand panel the LW field is very flat and sits below \JLW $\sim 2$
+J$_{21}$ until a redshift of $z \sim 16.5$ at which point it increases strongly due to a nearby source
+which undergoes a starburst and emits copious amounts of LW radiation
+(and ionising radiation\footnote{the
+  shorter mean free path of the ionising radiation means that \ha does not get photoionised}) in the
+direction of \hac. The LW field reaches its zenith at a redshift of $z \sim 15.8$ and thereafter
+starts to decline. The green circle at $z = 15.6$ represents the redshift at which the halo was
+detected as a metal-free and star-free atomic cooling halo in the original simulations
+\citep{Regan_2019}. The black star indicates the redshift at which star formation begins in this
+re-simulation ($z = 15.05$). \\
+\indent In the right hand panel we show the merger history of both \ha and \hb
+as found in the original simulations. The mergers, both major and minor, drive the dynamical heating
+which heats the gas and delays star formation \citep{Wise_2019}. 
+\ha experiences a major merger starting at $z \sim 16.2$ and lasts until $z \sim 15.7$. This
+merger, in combination with the LW field, suppresses star formation until z = 15.05 (again the green
+circles denotes the time of collapse in the original, lower resolution, simulations). The merger
+history of \hb is shown as the red line. \hb is run without any LW background as a control case. As a
+result star formation is triggered at $z = 17.21$. Using the results from the original simulation
+which allows us to see the future evolution of that halo we see that immediately after star formation
+the halo undergoes a major merger. It is therefore highly likely that, in the absence of a suppressing
+LW background, the merger triggers star formation, which in the original simulation was
+suppressed until after $z = 15$. \\
+\indent In \ha star formation is delayed by 15 Myr compared to the original
+simulation where the halo was detected at z = 15.6. The higher resolution simulations may
+resolve a greater level of dynamical heating which slightly delays the time of star formation. It
+should be noted that the original simulation had 16 times coarser resolution as well as different
+refinement criteria and so direct comparisons must be treated with caution. In any case star
+formation occurs in both \ha and \hb when they are at very different phases in their evolution.
+In \ha the mass of the halo is significantly above the atomic cooling limit and the halo has
+remained metal-free. \hb on the other-hand, due to the lack of LW background, collapses early in a
+halo with a mass of a few times $10^6$ \msolar and so can be classified as a mini-halo. Firstly,
+however, we use results from \cloudy to determine when the negative feedback from stars eventually
+quenches further star formation through photoionisation. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%Visualisations of haloes at start and end %%%%%%%%%%%%%%%%%
+\begin{figure*}
+\centering
+\begin{minipage}{175mm}      \begin{center} 
+\centerline{
+\includegraphics[width=0.52\textwidth]{FIGURES/HaloA/Proj_z_number_density_2001.png}
+\includegraphics[width=0.52\textwidth]{FIGURES/HaloB/Proj_z_number_density_1223.png}}
+\caption{Both panels show the projected number density in each halo at the end of each simulation. The
+  left panel shows \ha while the right panel shows \hb.
+  The legend in each figure gives the mass of the five most massive stars at the final output time, as well as
+  the age of the star at that time. The extent of each panel is 20 pc (physical). The orange
+  star in each case represents the most massive star. Blue stars are those stars (normal PopIII stars) for
+  which the rate is below the critical rate \citep{Sakurai_2017} for SMS formation. At this time no
+  SMSs exist in either simulation
+  as the accretion rate onto each star is less that the critical rate. }  \label{Fig:ProjectionEnd}
+\end{center} \end{minipage}
+
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{table*}
+    %\centering
+    %\begin{tabular}{c|ccccc}
+         %Halo A &  Time [kyr] & \% ion. volume ($<1$pc) & \% ion. volume %($<5$pc) & ion./rec. ($<1$pc) & ion./rec. ($<5$pc)\\
+%         \hline
+%          & 503 & 8.3 & 0.2 & & \\
+%          & 732 & 100 & 3.2 & & \\
+%          & 998 & 2.0 & 27 & & \\
+%          Halo B & & & & & \\
+%          \hline
+%          & 469 & 0.13 & 2e-3 & & \\
+%          & 732 & 14 & 0.7 & & \\
+%          & 994 & 100 & 2.2 & & \\
+%          & 1354 & 100 & 3.9 & & \\
+%    \end{tabular}
+%    \caption{Caption}
+%    \label{tab:my_label}
+%\end{table*}
+
+\begin{table}
+    \centering
+    \begin{tabular}{c|ccc}
+         Halo A &  Time [kyr] & \% ion. volume ($<5$pc) & ion./rec. ($<5$pc)\\
+         \hline
+          & 503 & 0.2 & 2.4e-6\\
+          & 732 & 3.2 & 6.4e-7\\
+          & 998 & 27 & 4.3e-5\\
+          Halo B &  Time [kyr] & \% ion. volume ($<1$pc) & ion./rec. ($<1$pc)\\
+          \hline
+          & 469 & 0.13 & 2.9e-5\\
+          & 732 & 14 & 1.7e-3\\
+          & 994 & 100$^{a}$ & 0.52\\
+          & 1354 & 100 & 63\\
+    \end{tabular}
+    \caption{For a selection of snapshots in the evolution of \ha and \hb we present the fraction of the inner star-forming volume (as a percentage) which is expected to be ionised, as well as the total ionising photon luminosity of the embedded stars as a fraction of that required to wholly ionise the gas within the same volume. Due to significant density variations (as well as our neglect of overlaps in computing the volumes of Str{\"o}mgren spheres), these two measures are distinct but complementary. $^{a}$Note that at this snapshot, the total ionized volume within 1pc of the largest star is driven by two objects: the largest star itself ($\approx 173M_{\odot}$) and a neighbouring $\approx 110 M_{\odot}$ star approximately 0.5pc away, both with Str{\" o}mgren radii of approximately 0.8pc; the neglected overlap of these two regions largely accounts for what is clearly an overestimate of the ionized volume, as evident from the insufficient ionizing photon budget to account for all of the matter within 1pc.}
+    \label{tab:feedback}
+\end{table}
+
+\subsection{Determining the time of star formation quenching}\label{cloudy:results}
+
+To assess the impact of photoionizing stellar feedback, we must investigate the ionisation state of the gas in the innermost star-forming regions of each halo. Here we adopt an heuristic definition of ``innermost region,'' based on their relative sizes and masses and the star formation seen in our models: for \ha we adopt the inner 5pc, and for \hb the inner 1pc, in each case centred on the most massive star within each halo at each chosen time (for \ha 503, 732, and 998 kyr; for \hb 469, 732, 994, and 1354 kyr). We may then evaluate the evolution of both the total ionised volume and the total ionisation budget through each snapshot, in order to provide subtly distinct but complementary measures of the strength of stellar feedback.
+
+First, we compute the ionised volume associated with each thermally-relaxed star as described in section \ref{cloudy:description}, and sum the overlapping volumes of each resulting sphere with the central star-forming region, as it is defined for each halo. For simplicity, here we neglect any overlap between the Str{\" o}mgren regions associated with each star, although we note a number of such overlapping regions at late times. A more precise estimate of the ionised volume would however necessitate a more detailed 3-D treatment of the radiative transfer which, as discussed above, is beyond the scope of this work; furthermore, for a constant combined ionizing luminosity, any reduction in ionised volume in accounting for overlaps in our spherically-symmetric Str{\"o}mgren spheres would be compensated by the ionisation of a greater (though presumably not spherically symmetric) volume by the remaining available ionising photons, to a greater or lesser degree depending on the local density distribution.
+
+Indeed, an alternative approach is to simply compare the ionizing photon luminosity of all stars within the inner star forming region with the total integrated recombination rate of the gas if all hydrogen atoms were ionized; the latter sets the total emission rate of photons with E$>$13.6eV needed to maintain ionization of the star-forming region in equilibrium. This can be found from integrating over the hydrogen number density:
+
+\begin{equation}
+    \dot R = \int_{\rm{V}}\alpha_{\rm{B}}(\rm{H}^{0},T)n_{\rm{H}}^{2}(r)d\rm{V}
+\end{equation}
+
+\noindent where $n_{\rm{H}}(r, t)$ is the spherically-averaged density profile centered on the most massive star in the Halo at time t (see above), and $\alpha_{\rm{B}}(\rm{H}^{0},T)$ is the case B recombination coefficient for hydrogen, which we take as $\approx1.4\times 10^{-13}\rm{cm}^{3}\rm{s}^{-1}$ for primordial gas at a temperature typical of plasmas photoionized by Population III stars, $\rm{T}\sim 2\times 10^{4}$K \citep{Osterbrock2006, Johnson2012}. 
+
+These two measures of the strength of ionizing stellar feedback are compared in Table \ref{tab:feedback}. Note that the ionized volume and the fractional ionizing photon budget don't necessarily move perfectly in tandem. This is partly due to our simplified treatment as described above, including overlapping Str{\" o}mgren regions and spherically-averaged density profiles, but also reflects the variable density distribution, with the lowest density regions preferentially ionized over high-density knots. In particular, in both \ha and \hb we see a marked rise in the ionized volume between $\sim 700$ and $\sim1000$kyr, however only for \hb is this matched by a similar rise in the fractional ionizing photon budget. Evidently, ionizing stellar emission is likely to shut down star formation in \hb shortly before $\sim 1000$kyr. At the same time in its evolution, the dense gas in the central region of \ha is more robust against stellar feedback, albeit with the latter growing in importance at this point.
+
+%{\bf TEW: need to do one more pass to clean up a bit, maybe add a couple sentences on a few of the other tests we did, but just about there.}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 4%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Mass Function
+\begin{figure*}
+\centering
+\begin{minipage}{175mm}      \begin{center}
+\centerline{
+    \includegraphics[width=18.0cm, height=12cm]{FIGURES/FinalMass_MultipleHaloes.png}}
+\caption{
+  The mass function for the star that formed in \ha and \hb over 2 Myr. Blue bars represent
+  stellar masses from \ha while red bars represent stellar masses from \hb. The dichotomy in
+  masses in clearly evident with a strong bias towards more massive stars in \ha. This is due to the
+  higher temperatures in \ha compared to \hb which in turn leads to high in-fall rates to the centre
+  and hence more mass available for proto-stars to accrete. The median mass for \ha is 680 \msolar
+  and the median mass for \hb is 44 \msolarc. 
+}
+\label{Fig:MassFunction}
+\end{center} \end{minipage}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{The onset and end of star formation}
+Star formation is triggered when the all of the criteria set out in \S \ref{Sec:Methods} are
+fulfilled. In Figure \ref{Fig:ProjectionStart} we show a projection of the number density in the
+regions surrounding the formation of the first star in each halo. The projections are made from the
+first snapshot following star formation. Each panel is 20 pc across. In the left hand panel we
+show the projection from \ha which shows the formation of a single star (coloured in orange
+at the centre of the gas cloud southwest of centre). The legend on the top left gives the mass and
+age of the star at this time. Stars coloured in orange denote the most massive star in the simulation.
+In the right-hand panel we show the projection for \hbc. In this case two stars are formed in the first
+snapshot following star formation. The most massive star has a mass of 37 \msolar and is 28 kyr old,
+the second star has a mass of 6 \msolar and is 4 kyr old. Stars coloured in red denote that the
+accretion rate exceeds the SMS critical rate of 0.04 \msolaryrc. \\
+\indent In Figure \ref{Fig:ProjectionEnd} we show the extend of star formation at the end of each
+simulation (as determined by the \cloudy models). In the left panel we show the results for \ha and
+for \hb in the right hand panel. Simulation \ha is terminated X Myr after the formation of the first
+star while \hb is terminated Y Myr after the formation of the first star. At the end of the \ha
+simulation there are 99 stars in the simulation with masses ranging from approximately 50 \msolar
+up to a maximum mass of over 6000 \msolarc.  Star formation in \ha is widespread throughout the
+halo with a number of different gas clouds giving rise to star formation. Furthermore, the
+interactions between clouds, as the simulation develops, triggers star formation as individual clouds
+merge and interact. \hb on the other-hand contains essentially only a single site of star formation
+due to the significantly smaller halo mass. At the end of the simulation of \hb there are 21 stars
+with masses ranging from approximately 20 \msolar up to approximately 170 \msolar.\\
+\indent In Figure \ref{Fig:MassFunction} we show the mass distribution of stars at the final
+output time. Stars from \ha are binned in blue, stars from \hb are binned in red. The median mass
+of stars formed in \hb is 44 \msolar while the median mass of stars formed in \ha is 680 \msolarc.
+The most massive star in \ha at the final output time is 6128 Msolar with another star with a mass
+of 4477 \msolarc. \ha has 22 stars with masses exceeding 1000 \msolarc. The lowest mass star in
+\ha has a mass of 40 \msolarc. The mass distribution of stars in \hb is significantly smaller running
+from 22 \msolar up to 173 \msolar. However, it should be noted that due to our finite resolution
+($\Delta x \sim 1000$ au) we cannot put a lower limit on star formation and we are likely missing
+lower mass stars. 
+
+\subsection{The case for super-massive star formation}
+In Figure \ref{Fig:ProjectionEnd} we saw that the mass of the most massive star in \ha is
+6128 \msolarc. While this mass is well beyond the mass of ordinary PopIII stars \citep{Turk_2009, Greif_2011, Wise_2012b, Crosby_2013, Susa_2014, Hirano_2014, Stacy_2016} and also more than 30 times
+larger than the most massive star in \hb it is still well short of the mass often associated with
+truely super-massive stars \citep[e.g.][]{Woods_2018}. Furthermore, the halo simulated here appeared
+at first glance to present near ideal initial conditions in which to form a supermassive star.
+To illustrate this point we show radial profiles of the halo properties of both \ha and \hb in
+Figure \ref{Fig:RadialProfiles}. Figure \ref{Fig:RadialProfiles} shows the state of the gas in
+each halo immediately prior to star formation. \ha is denoted by the blue line, \hb by the red line.
+The temperature, \molH fraction, enclosed gas mass and mass inflow rate are shown in clockwise order
+starting from the bottom left panel. \\
+\indent \ha shows near isothermal collapse, although the gas does
+show some degree of cooling at approximately 10 pc. The \molH fraction is very different between
+the two haloes, with \ha showing a steep decline in \molH towards the centre due to the combination
+of the LW background and the rapid assembly of mass. \hb on the other-hand shows a more typical
+\molH evolution consistent with mini-halo formation. The enclosed mass plot in the top right panel
+illustrates the different mass associated with each halo as a function of radius. \ha being well
+inside the atomic cooling mass range. In the bottom right hand panel we see the mass inflow rate for
+each halo. \ha shows mass infall rates averaging greater than 0.1 \msolaryr all the way into the
+centre of the halo. \hbc's mass infall rates on the other hand fall from approximately
+0.1 \msolaryr at 1 pc down to approximately $10^{-3}$ \msolaryr in the very centre. As we will see
+this result is reflected in the accretion rates observed onto the proto-stars. \\
+\indent In order to understand why, given apparent high mass infall rates that are greater than the
+critical rate, a SMS does not form we need to examine the accretion rate that is measured onto the
+stars within the simulation itself. In Figure \ref{Fig:AccretionRates} we show the mass evolution and
+the accretion rate onto the most massive star in each halo. In the left panel we show the mass
+evolution as a function of the stellar age. The most massive star in \ha is denoted by the blue line,
+the most massive star in \hb by the red line. The dashed line in the panel shows the mass evolution
+of a star with the median stellar mass in the simulation. The most massive star in \ha is formed
+when two gas clouds within the central region merge and trigger star formation. The star quickly
+grows in mass up to it's final mass, of 6128 \msolarc, within approximately 20 kyr. After which
+it stops growing. The mass evolution of the most massive star in
+\hb is a little different. In this case the star accretes quite slowly at approximately $10^{-3}$
+\msolaryr (see right panel). What then drives the star to increase it's mass is a stellar merger
+with another star. This occurs when the main progenitor star is approximately 200 kyr old and
+results in a star of 173 \msolarc. \\
+\indent In the right hand panel of Figure \ref{Fig:AccretionRates} we see the accretion rates onto
+the most massive star and onto the median star for each simulation. It is very interesting to see that
+initially each star follows approximately the mass accretion rate as found in the radial profiles
+(see Figure \ref{Fig:RadialProfiles}).
+However, in both cases after a few tens of kyrs the accretion rate onto each star drops dramatically
+and mass growth is halted. This drop in accretion is not due to feedback since no ionising feedback
+is present in these simulation. Instead mass accretion is terminated as the star accretes all the
+gas in it's surroundings and moves into a less dense region of the inner halo. All of the stars
+formed have a small initial velocity of a few \kms \ which while much smaller than the circular
+velocity of the host halo does cause the stars to move around and decouple from the high density
+gas cloud in which they initially formed. \\
+\indent By the end of each simulation the total stellar mass in \ha is 90,000 \msolar and 1300
+\msolar in \hbc. The star formation efficiency in the inner 20 pc (5 pc) of \ha (\hbc) is 28 \%
+(18 \%).  In order for the formation of a truly supermassive star in \ha all of the stellar mass
+(i.e. ~ 90,0000 \msolarc) would have needed to have been accreted onto the stellar surface. Instead
+what happened was that the outer gas cloud in \ha fragmented into a small number of sub-clouds which
+each generated hotspots of star formation. These sub-clouds tidally disrupt each other during the
+subsequent evolution both triggering further star formation but also tidally disrupting accretion.
+From a total baryonic reservoir of approximately 300,000 \msolar inside 20 pc approximately 2 \% of
+the baryons went into the most massive star. However, the key issue with forming SMS appears to be that
+these haloes are highly turbulent and that sustaining accretion in such an environment is
+hugely challenging. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Radial Profiles prior to formation
+\begin{figure*}
+\centering
+\begin{minipage}{175mm}      \begin{center}
+\centerline{
+    \includegraphics[width=18.0cm, height=12cm]{FIGURES/MultiPlot.png}}
+\caption{We examine the radial profiles for both \ha (blue line) and \hb (red line). The four panels
+  are from bottom left going clockwise: Temperature, \molH fraction, enclosed gas mass and in-fall rate.
+  As \hb collapsed early due to the lack of a LW background (compared to the original Renaissance simulation)
+  this halo's temperature is significantly lower in the centre of the halo. The central temperature equilibrium
+  value is close to 500 K which is characteristic of PopIII simulations for the chemical network used in this work.
+  This lower temperature is due to the high \molH fraction, as shown in the upper left panel. This can
+  be contrasted with the radial profiles for \ha which show systematically higher temperatures in the core of the
+  halo and lower \molH fractions. The lower \molH fractions are due to a combination of dynamical heating from
+  mergers and from local radiation sources. The enclosed mass fractions identify the difference
+  in masses between the haloes. In the case of \hb the enclosed masses are systematically lower compared
+  to \ha as this is a effectively a mini halo. In-fall rates in both haloes are very different in the
+  centre of each halo. Average in-fall rates in the centre of \ha are above 0.1 \msolar/yr compared
+  to below 0.001 \msolar/yr in \hb. These in-fall rates are consistent with the accretion rates
+  that are seen onto the stars that subsequently form in each halo. }
+\label{Fig:RadialProfiles}
+\end{center} \end{minipage}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Accretion Rates and Masses for all haloes. Most massive and median
+
+\begin{figure*}
+\centering
+\begin{minipage}{175mm}      \begin{center}
+    \centerline{
+      \includegraphics[width=9.0cm, height=6cm]{FIGURES/Mass_MultipleHaloes.png}
+      \includegraphics[width=9.0cm, height=6cm]{FIGURES/MassAccretionRate_MultipleHaloes.png}}
+    \caption{
+      \textit{Left Panel:} The mass evolution of the most massive star in each simulation. The
+      solid blue line is for the most massive star in \ha. It has a mass of 6128 \msolar after 143 kyr.
+      The solid red line is for the most massive star in \hb. It has a mass of 173 \msolar after 1162 kyr
+      of evolution. We also look at the mass evolution of an average star in each simulation for
+      comparison. In \ha an average star has a mass of 683 \msolarc, this is shown by the dashed blue line.
+      In \hb on the otherhand an average star has a mass of 43 Msolar and is shown by the dashed red line.
+      \textit{Right Panel:} The accretion rate onto the most massive star for both \ha and \hb
+      (solid lines), dashed lines give the accretion rate onto the median mass star for both \ha
+      and \hb. In both cases initial accretion rates begin to decline rapidly after 10 - 20 kyr and
+      do not recover. The black dashed line gives the critical rate for SMS star formation
+      \citep{Sakurai_2016}.
+    }
+\label{Fig:AccretionRates}
+\end{center} \end{minipage}
+\end{figure*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{Discussion and Conclusions} \label{Sec:Discussion}
+The aim of this study was to examine the prospect of (super-)massive star formation in haloes
+that were exposed to moderate LW radiation and also experienced significant dynamical heating
+effects due to mergers. We identified two such haloes in the Renaissance datasets \citep{Regan_2019}
+and selected two haloes which showed no star formation or metal enrichment prior to reaching the
+atomic cooling limit. These characteristics make these environments ideal for forming massive
+stars. Furthermore, the selected haloes displayed an isothermal collapse profile \citep{Regan_2019}.\\
+\indent The two haloes, \ha and \hbc, were then targeted for re-simulation by increasing the
+spatial resolution by a factor of 16 ($\Delta x \sim 1000$ au) and the mass resolution by a factor of
+169 (M$_{DM} \sim 170$ \msolarc). Additionally, self-shielding of \molH from LW was included and
+the Jeans length was refined by at least 64 cells. These additional criteria ensured that the
+collapsing halo was simulated as self-consistently as possible. To model star formation within
+the collapsing gas clouds a star formation prescription was employed which additionally tracks accretion
+onto the stars and allows for the distinction between compact PopIII stars and massively inflated
+SMSs accreting above the critical rate of 0.04 \msolaryrc. \\
+\indent \ha was simulated with a LW radiation field impinging on it that followed exactly what was
+found in the original simulations and so accounted for star formation from nearby galaxies. The
+LW radiation field imposed is shown in Figure \ref{FIG:LWField}. \hb on the other-hand was used as the
+control halo and no LW field was imposed to test the impact that turning off the LW field would have.\\
+\indent In the high-resolution re-simulation \ha formed 22 stars with masses greater than 1000
+\msolarc. The most massive star in \ha having a mass of 6128 \msolarc. \hbc, re-simulated without
+a LW radiation field, collapsed earlier in its evolution before reaching the atomic cooling limit.
+The lack of any LW field allowing PopIII star formation to take hold. In \hb a total of 21 stars
+formed at the end of the simulation with the most massive star in \hb having a mass of 173 \msolarc.
+While the most massive star in \ha has a mass of more than 6000 \msolar it's accretion rate has fallen
+to less than $10^{-6}$ \msolaryr by the time the simulation was terminated. No ionising radiative
+feedback was employed in these simulations and hence radiative feedback is not the reason for
+the falloff in accretion. Instead, while high accretion rates of greater than 0.1 \msolar initially
+fall onto the proto-star those rates are not sustained. The turbulent nature of the collapsing parent
+cloud causes a multitude of sub-clouds to form and dissipate. The sub-clouds with masses of
+thousands of solar masses form stars but also tidally disrupt other sub-clouds disrupting
+accretion onto other stars. This phenomenon is observed in all of the stars formed in the simulation.
+On average stars accrete above 0.01 \msolaryrc for approximately 10 kyr before accretion is halted
+due to external tidal disruption. \\
+\indent What does this mean for the formation of SMSs and massive black hole seeds? This is only a
+single halo simulated for 2 Myr. It is likely that the phenomenon of a turbulent environment is
+common in the early stages of galaxy formation and PopIII studies have also converged on the
+formation of multiple stars in mini-haloes. It is therefore not surprising that this picture appears in
+more massive galaxies as well. After approximately 2 Myr the stars in \ha will start to directly
+collapse in black holes retaining close to 100\% of the stellar mass \citep{Heger_2003}. While this
+event is unlikely to have any immediate impact on the mass accretion rate onto the black hole it will
+leave this halo with a small population of massive black holes less than a few Myrs after
+galaxy formation. Allowing the galaxy to evolve further, through a few tens of dynamical times may
+reveal than these black holes begin to merge to form a most massive seed and eventually an intermediate mass black hole with a mass close to $10^5$ \msolar (similar to what most canonical galaxy formation
+simulation use as their seed mass). Such black hole mergers may even be
+detectable by LISA \cite{Hartwig_2018}. In any case what will actually be required is further high
+resolution simulations which can model the formation of massive stars in high-infall rate haloes,
+perhaps independent of metallicity \citep[][Regan et al. 2020]{Chon_2020}, which experience
+large transfer of baryonic mass towards their centres. These simulations will equally need to
+be able to differentiate between PopIII star formation and SMS star formation, as done here, but
+for a longer time period and beyond the formation of the subsequent black holes. 
+
+
+
+
+\label{lastpage}
+\bibliographystyle{mn2e}
+\bibliography{mybib}
+\end{document}
