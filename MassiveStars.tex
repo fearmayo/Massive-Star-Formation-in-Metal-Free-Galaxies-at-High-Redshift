@@ -159,7 +159,33 @@ In this study we build on the previous works cited above. \\
   using \cloudy \citep{Ferland_2017} is instead used to gauge the point at which ionising radiation
   would have suppressed further star formation in each halo. 
   
-  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%Visualisations of haloes at start and end %%%%%%%%%%%%%%%%%
+\begin{figure*}
+\centering
+\begin{minipage}{175mm}      \begin{center} 
+\centerline{
+\includegraphics[width=0.52\textwidth]{FIGURES/Combined.pdf}
+\includegraphics[width=0.52\textwidth]{FIGURES/MassRedshift.pdf}}
+\caption{\textit{Left Panel:} The LW background rate imposed on Halo A for the re-simulation. Halo B is not shown
+  as no LW background is imposed on Halo B. The LW rates
+  are composed of local sources, plus a LW background from Wise et al. (2012), extracted from the original
+  Renaissance simulations. The local sources dominate over the background by at least an order of magnitude at
+  all times. In the original
+  Renaissance simulations \ha (and \texttt{HaloB})  remained metal-free and star-free until z = 15.6 (and
+  z = 15.0 respectively). The redshift of original collapse is marked with a green circle.
+  A black star mark the redshift at which star formation occurs in \ha in the zoom-in simulations.
+  \textit{Right Panel:} The merger history of both \ha and \hb
+  as determined from the original Renaissance simulations. Again we mark we the redshift of first star formation
+  in \ha and \hb as found in the re-simulations with black stars. Note that star formation now occurs significantly
+  earlier in \hb because no LW background is imposed. In \ha on the other-hand star formation occurs 15 Myr after
+  the halo was detected in the original (lower resolution) simulations. 
+  }  \label{Fig:LWHistory}
+\end{center} \end{minipage}
+
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Methods} \label{Sec:Methods}
 
 
@@ -217,32 +243,6 @@ average ($\langle\delta\rangle \sim 0.09)$), and low ($\langle\delta\rangle \sim
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 1%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%Visualisations of haloes at start and end %%%%%%%%%%%%%%%%%
-\begin{figure*}
-\centering
-\begin{minipage}{175mm}      \begin{center} 
-\centerline{
-\includegraphics[width=0.52\textwidth]{FIGURES/Combined.pdf}
-\includegraphics[width=0.52\textwidth]{FIGURES/MassRedshift.pdf}}
-\caption{\textit{Left Panel:} The LW background rate imposed on Halo A for the re-simulation. Halo B is not shown
-  as no LW background is imposed on Halo B. The LW rates
-  are composed of local sources, plus a LW background from Wise et al. (2012), extracted from the original
-  Renaissance simulations. The local sources dominate over the background by at least an order of magnitude at
-  all times. In the original
-  Renaissance simulations \ha (and \texttt{HaloB})  remained metal-free and star-free until z = 15.6 (and
-  z = 15.0 respectively). The redshift of original collapse is marked with a green circle.
-  A black star mark the redshift at which star formation occurs in \ha in the zoom-in simulations.
-  \textit{Right Panel:} The merger history of both \ha and \hb
-  as determined from the original Renaissance simulations. Again we mark we the redshift of first star formation
-  in \ha and \hb as found in the re-simulations with black stars. Note that star formation now occurs significantly
-  earlier in \hb because no LW background is imposed. In \ha on the other-hand star formation occurs 15 Myr after
-  the halo was detected in the original (lower resolution) simulations. 
-  }  \label{Fig:LWHistory}
-\end{center} \end{minipage}
-
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -260,7 +260,30 @@ average ($\langle\delta\rangle \sim 0.09)$), and low ($\langle\delta\rangle \sim
  \indent Having now optimised the simulations to focus only on the target halo 
  we next look to (dark matter) particle splitting. By splitting the dark matter
  particles we increase the mass resolution of the simulation so as to match the increased spatial resolution. Dark matter particles are split in \enzo using the prescription of \cite{Kitsionas_2002} and was previously described in \cite{Regan_2015}. By employing particle splitting we reduce the dark matter particle mass to $M_{DM} \sim 170$ \msolar inside the target halo and its surrounding Lagrangian volume.
- 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%Visualisations of haloes at start and end %%%%%%%%%%%%%%%%%
+\begin{figure*}
+\centering
+\begin{minipage}{175mm}      \begin{center} 
+\centerline{
+\includegraphics[width=0.49\textwidth]{FIGURES/Ionisation.pdf}
+\includegraphics[width=0.49\textwidth]{FIGURES/Recombination.pdf}}
+\caption{\textit{Left Panel:} The percentage of the inner volume ionised in each halo. For \ha the
+    inner volume is set as the central 5pc while for \hb the inner volume is set at 1 pc. In each case
+    the centre is defined as the position of the most massive star at that time. After approximately
+    1100 kyr \hb has become fully ionised, \ha meanwhile is approximately 46\% ionised after 2000
+    kyr. \textit{Right Panel:} The ratio of the ionising photon luminosity and the total integrated
+    recombination rate of the gas. For \hb the results are similiar to the volume averaged
+    calculation - the region is fully ionised after approximately 1100 kyr. However, for \ha the
+    results are quite different. The degree of ionisation is much smaller with recombinations easily
+    able to dominate ionisations. This is due to the multitude of dense clumps and filaments
+    spread throughout \ha. 
+  }  \label{Fig:Ionisation}
+\end{center} \end{minipage}
+
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
  \subsection{The External Radiation Field} \label{Sec:LWRadField}
  With refinement targeted only on a single halo (and it's progenitors) star formation in the surrounding galaxies is therefore neglected. In order to account for the radiation which would otherwise be emitted by these galaxies we extract the LW emission from the original simulations and create a table of LW values that this target halo is exposed to as a function of
  redshift. Using the \grackle \citep{Grackle} software library we then use these LW tables as the ``background'' that this halo is exposed to. Self-shielding to LW radiation is also invoked in the re-simulations based on the \cite{Wolcott-Green_2011} prescription.\\
@@ -271,26 +294,6 @@ average ($\langle\delta\rangle \sim 0.09)$), and low ($\langle\delta\rangle \sim
  control simulation and allows us to examine the impact of what happens when
  no LW field is present. 
  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%Visualisations of haloes at start and end %%%%%%%%%%%%%%%%%
-\begin{figure*} 
-\centering
-\begin{minipage}{175mm}      \begin{center} 
-\centerline{
-\includegraphics[width=0.52\textwidth]{FIGURES/HaloA/Proj_z_number_density_0001.pdf}
-\includegraphics[width=0.52\textwidth]{FIGURES/HaloB/Proj_z_number_density_0028.pdf}}
-\caption{Both panels show the projected number density of the region around which the first
-  star forms. \ha is in the left hand panel, \hb in the right hand panel.
-  The legend in each panel gives the mass of each star at the first output time following star
-  formation as well as the age of each star at that time. The extent of each panel is 20 pc (physical). The orange
-  star in each case represents the most massive star. Stars coloured in red are stars in which the accretion rate
-  exceeds that required for supermassive star formation (0.04 \msolaryrc). Blue stars are those stars (normal PopIII stars) for
-  which the rate is below the critical rate. \ha contains a single initial star. \hb contains two stars
-  at the first output following star formation.  }\label{Fig:ProjectionStart}
-\end{center} \end{minipage}
-
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
  \subsection{Subgrid Star Formation Prescription} \label{Sec:StarFormation}
  \indent In order to resolve star formation in the collapsing target haloes we set the maximum refinement level of the simulation to 20. This is an increase of a factor of $2^8 (256)$ compared to the  original Renaissance simulations and allows us to reach a maximum spatial resolution of $\Delta x \sim 1000 $au. While this (maximum) resolution is less than what was achieved
@@ -348,6 +351,26 @@ currently in place in \enzo (see \cite{Enzo_2014} for details). As a result, for
 we neglected the impact of ionising feedback. Instead we post-processed the impact of
 ionising feedback with \cloudy and use the results to estimate the point at which the impact of
 radiative feedback on the surrounding gas becomes so strong that the simulation should be terminated.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%Visualisations of haloes at start and end %%%%%%%%%%%%%%%%%
+\begin{figure*} 
+\centering
+\begin{minipage}{175mm}      \begin{center} 
+\centerline{
+\includegraphics[width=0.52\textwidth]{FIGURES/HaloA/Proj_z_number_density_0001.pdf}
+\includegraphics[width=0.52\textwidth]{FIGURES/HaloB/Proj_z_number_density_0028.pdf}}
+\caption{Both panels show the projected number density of the region around which the first
+  star forms. \ha is in the left hand panel, \hb in the right hand panel.
+  The legend in each panel gives the mass of each star at the first output time following star
+  formation as well as the age of each star at that time. The extent of each panel is 20 pc (physical). The orange
+  star in each case represents the most massive star. Stars coloured in red are stars in which the accretion rate
+  exceeds that required for supermassive star formation (0.04 \msolaryrc). Blue stars are those stars (normal PopIII stars) for
+  which the rate is below the critical rate. \ha contains a single initial star. \hb contains two stars
+  at the first output following star formation.  }\label{Fig:ProjectionStart}
+\end{center} \end{minipage}
+
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Post-Processing with Cloudy}
 \label{cloudy:description}
@@ -700,14 +723,23 @@ stars \citep{Heger_2003}. The merger of two black holes with these masses will p
 GW signal detecable by LISA \citep{Sesana_2016, Cornish_2020} emitting
 gravitational waves between approximately $10{^-4}$ and $10^{-1}$ Hz (Detector frame frequencies). The
 Signal-to-Noise ratio (SNR) from the merger of two black holes with masses of 5000 \msolar at z = 15
-is approximately 33 and therefore is in principle detectable by LISA. \cite{Klein_2016} modelled
+is approximately 33 and therefore should be detectable by LISA. The merger of a 10000 \msolar binary
+black hole system will enter the LISA band approcimately 1 month before merger and complete
+thousands of orbits before merger. With this number of cycles LISA will be able to detect
+the redshifted mass with a precision of close to 1\% \citep{Sesana_2013}. The largest uncertainty
+will however come from the determination of the redshift (or luminosity distance) which at this
+redshift is expected to have an uncertainty of approximately 30\% \citep{Sesana_2013}. This
+redshift uncertainty will translate to a similar uncertainty in the chirp mass of the binary.
+\cite{Klein_2016} modelled
 the merger of similar black hole masses and using a SNR = 7 found that the expected number of
 detections would be 358 over a 5 year mission period (their \texttt{N2A5M5L6} model in Table II).
 Their
 modelling only accounted for the merging of heavy seed black holes following a galaxy merger and
 neglected the in-situ models as described here which could increase the numbers of events potentially
 discoverable by LISA significantly. This point was previously investigated by
-\cite{Hartwig_2018} as a method to discriminate between seed formation scenarios. 
+\cite{Hartwig_2018} as a method to discriminate between seed formation scenarios. Further,
+investigation of the number density of in-situ mergers is now underway (Regan et al. in prep).
+
 
 
 
