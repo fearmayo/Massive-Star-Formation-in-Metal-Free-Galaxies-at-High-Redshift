@@ -4,7 +4,7 @@
 \usepackage{natbib} 
 \usepackage{epsfig} 
 \usepackage{graphicx} 
-\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
 %\usepackage{deluxetable} 
 \usepackage{aas_macros} 
 \usepackage{amssymb}
@@ -13,6 +13,9 @@
 \usepackage{hyperref}	% Hyperlinks
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
 \usepackage[caption=false]{subfig}
+\usepackage{soul}                          % provides \hl{} for highlighting
+\usepackage{ulem} \normalem 
+\usepackage{xifthen}
 \newcommand{\lya}{Lyman-$\alpha$~}
 \newcommand{\gad}{\textsc{Gadget-2~}}
 \newcommand{\enzo}{\texttt{Enzo~}}
@@ -65,7 +68,13 @@
 \def\mgh#1{{\bf MH:  #1}}
 \def\jr#1{{\color{blue} \bf JR:  #1}}
 \def\pj#1{{\bf PJ:  #1}}
-\newcommand{\jhw}[1]{{\color{red} \bf JHW: #1}}
+\newcommand{\jhw}[1]{{\color{Plum} (\bf JHW: #1)}}
+\newcommand{\note}[1]{{\noindent\hspace{-3em}\bf\color{Plum}$\longrightarrow$ \quad{#1}}}
+\newcommand{\delete}[1]{{\color{red}{\sout{#1}}}}
+\newcommand{\change}[2][]{%
+\ifthenelse{\isempty{#2}}{{\color{ForestGreen}{#1}}}%
+{{\color{RedOrange}\sout{#1}}{\color{ForestGreen}{#2}}}%
+}
 
 
 \def\etal{{\it et al.}~}
