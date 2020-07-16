@@ -412,7 +412,7 @@ radiative feedback on the surrounding gas becomes so strong that the simulation 
 \centerline{
 \includegraphics[width=0.52\textwidth]{FIGURES/HaloA/Proj_z_number_density_0001.pdf}
 \includegraphics[width=0.52\textwidth]{FIGURES/HaloB/Proj_z_number_density_0028.pdf}}
-\caption{Both panels show the projected number density of the region around which the first
+\caption{Both panels show the projected number density$^3$ of the region around which the first
   star forms. \ha is in the left hand panel, \hb in the right hand panel.
   The legend in each panel gives the mass of each star at the first output time following star
   formation as well as the age of each star at that time. The extent of each panel is 2 pc (physical). The orange
@@ -488,7 +488,7 @@ quenches further star formation through photoionisation in each halo.
 \centerline{
 \includegraphics[width=0.52\textwidth]{FIGURES/HaloA/Proj_z_number_density_2001.pdf}
 \includegraphics[width=0.52\textwidth]{FIGURES/HaloB/Proj_z_number_density_1103.pdf}}
-\caption{Both panels show the projected number density in each halo at the end of each simulation. The
+\caption{Both panels show the projected number density$^3$ in each halo at the end of each simulation. The
   left panel shows \ha while the right panel shows \hb.
   The legend in each figure gives the mass of the five most massive stars at the final output time, as well as
   the age of the star at that time. The extent of each panel is 20 pc (physical). The orange
@@ -662,7 +662,7 @@ ionisation budget remains very low with recombinations dominating - this relfect
       solid blue line is for the most massive star in \texttt{HaloA}. It has a mass of
       6128 \msolar after 143 kyr. The solid red line is for the most massive star in \texttt{HaloB}.
       It has a mass of 173 \msolar after 1162 kyr of evolution. We also look at the mass evolution
-      of an average star in each simulation for comparison. In \ha median$^4$ star has a mass of 683
+      of an average star in each simulation for comparison. In \ha a median$^4$ star has a mass of 683
       \msolarc, this is shown by the dashed blue line. In \hb on the other hand a median star has a
       mass of 43 \msolar and is shown by the dashed red line. 
       \textit{Right Panel:} The accretion rate onto the most massive star for both \ha and \hb
@@ -681,7 +681,9 @@ ionisation budget remains very low with recombinations dominating - this relfect
 
 \subsection{The onset and end of star formation}
 Star formation is triggered when all of the criteria set out in \S \ref{Sec:StarFormation} are
-fulfilled. In Figure \ref{Fig:ProjectionStart} we show a projection of the total gas number density\footnote{Number density refers here to the number density of each separate species weighted by each species atomic mass unit.} in the
+fulfilled. In Figure \ref{Fig:ProjectionStart} we show a projection of the total gas number
+density\footnote{Number density refers here to the total number density from each separate
+  species weighted by each species atomic mass unit.} in the
 regions surrounding the formation of the first star in each halo. The projections are made from the
 first snapshot following star formation. Each panel is 20 pc across. In the left hand panel we
 show the projection from \ha, which shows the formation of a single star (coloured in orange
@@ -819,15 +821,18 @@ the necessary ram pressure and extract orbital energy.
 What then does this mean for potential gravitational wave detection?\\
 \indent Within approximately 4 Myr after the formation of the first massive stars here there
 will be a population of black hole seeds with masses in the range 1000 \msolar up to 6000 \msolar
-(and likely higher). In Figure \ref{Fig:Sensitivity} we plot the signal expected from the
-merger of two black holes with masses of 5000 \msolar each at $z = 15$. These masses
-are consistent with the masses of the stars found in this simulation and black holes
+(and likely higher). In Figure \ref{Fig:Sensitivity} we plot the characteristic strain
+expected from the merger of two black holes with masses of 5000 \msolar each at $z = 15$.
+These masses are consistent with the masses of the stars found in this simulation and black holes
 with similar masses are expected from the direct collapse of these massive PopIII
 stars \citep{Heger_2003}. The merger of two black holes with these masses will produce a
 gravitational wave signal detectable by LISA \citep{eLISA, Sesana_2016, Cornish_2020} emitting
-gravitational waves between approximately $10^{-4}$ and $10^{-1}$ Hz (Detector frame frequencies). The
+gravitational waves between approximately $10^{-4}$ and $10^{-1}$ Hz (detector frame frequencies). The
 Signal-to-Noise ratio (SNR) from the merger of two black holes with masses of 5000 \msolar at $z = 15$
-is approximately 33 and therefore should be detectable by LISA. The merger of a 10,000 \msolar binary
+is approximately 33 and hence well within LISA's detection parameters\footnote{The SNR was calculated
+  using the LISA sensitivity calculatorg available at
+  \url{github.com/eXtremeGravityInstitute/LISA_Sensitivity.git} \citep{Robson_2019}}.
+The merger of a 10,000 \msolar binary
 black hole system will enter the LISA band approximately 1 month before merger and complete
 thousands of orbits before merger. With this number of cycles LISA will be able to detect
 the redshifted mass with a precision of close to 1\% \citep{Sesana_2013}. The largest uncertainty
@@ -871,8 +876,12 @@ control halo and no LW field was imposed to test the impact that turning off the
 \msolarc. The most massive star in \ha has a mass of 6128 \msolarc. \hbc, re-simulated without
 a LW radiation field, collapsed earlier in its evolution before reaching the atomic cooling limit.
 The lack of any LW field allowing PopIII star formation to take hold. In \hb a total of 21 stars
-formed at the end of the simulation with the most massive star in \hb having a mass of 173 \msolarc.  \jhw{Given that a few groups (e.g. Susa+, Hirano+, Hosokawa+) have looked at Pop III IMF in minihalos, we should compare with them.}
-While the most massive star in \ha has a mass of more than 6000 \msolar its accretion rate had fallen
+formed at the end of the simulation with the most massive star in \hb having a mass of 173 \msolarc.
+While our results cannot be used to infer a PopIII initial mass function our results
+are consistent with the results of other groups who have found that PopIII mini-haloes
+tend to host a small number of stars with peak masses in the raneg of a few tens of
+solar masses \citep{Hirano_2014, Susa_2014, Stacy_2016, Skinner_2020}.\\
+\indent While the most massive star in \ha has a mass of more than 6000 \msolar its accretion rate had fallen
 to less than $10^{-6}$ \msolaryr by the time the simulation was terminated. No ionising radiative
 feedback was employed in these simulations and hence radiative feedback is not the reason for
 the falloff in accretion. Instead, while high accretion rates of greater than 0.1 \msolaryr initially
@@ -916,11 +925,14 @@ Tracking the evolution of these truly seed black holes is the next frontier.
 %====================================================================
 
 \noindent JR acknowledges support from the Royal Society and Science Foundation Ireland under
-grant number URF$\backslash$R1$\backslash$191132. JHW is supported by National Science Foundation grants AST-1614333 and
+grant number URF$\backslash$R1$\backslash$191132.
+JHW is supported by National Science Foundation grants AST-1614333 and
 OAC-1835213, and NASA grants NNX17AG23G and 80NSSC20K0520.  
 BWO acknowledges support from NSF grants PHY-1430152, AST-1514700, AST-1517908, and  OAC-1835213, by NASA grants NNX12AC98G and NNX15AP39G, and by HST-AR-13261 and HST-AR-14315.
 JR wishes to acknowledge the DJEI/DES/SFI/HEA Irish Centre for High-End Computing (ICHEC) for the
 provision of computational facilities and support on which the zoom simulations were run.
+The authors also thank the Extreme Gravity Institute at Montana State University for making the
+LISA sensitivity curve scripts available on github. 
 The original Renaissance simulations were performed on Blue 
 Waters, which is operated by the National Center for Supercomputing Applications (NCSA)
 with PRAC allocation support by the NSF (awards ACI-1238993, ACI-1514580, and OAC-1810584).
