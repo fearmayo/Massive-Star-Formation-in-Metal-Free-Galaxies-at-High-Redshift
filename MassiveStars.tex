@@ -782,16 +782,57 @@ This conclusion is unlikely to be due to insufficient resolution: it is
 well-known that low resolution damps turbulent motion very significantly
 \citep[e.g.][]{Federrath_2010a, Downes_2012}. Thus insufficient resolution
 will lead to an {\it over-estimate} of the likelihood of forming an SMS.
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+   \centering 
+\includegraphics[width=0.5\textwidth]{FIGURES/CollisionalTime.pdf}
+\caption{The collisional time and relaxation times for the stars in \hac. The collisional times is
+  an estimate of the time taken for a collision between two stellar populations. For the stars
+  in \ha the time taken for a single collision to occur exceeds the Hubble time at all radii.
+  The relaxation time is a measure of the time taken for the stellar system to contract to
+  higher density, perhaps driving a higher collision rate, due to
+  two body relaxation. For \ha the relaxation time is approximately 10 Myr at 1 pc. }
+\label{Fig:Collisions}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Intermediate Mass Black Hole Merging and Implications for Gravitational Wave detection} \label{Sec:GW}
-\note{I think we should analyze and give some dynamical statistics of the stars. Some suggestions are the distribution of their radii, eccentricies, orbital velocities, half-mass radii, stellar enclosed mass radial profile, and/or their rms velocity.  This would give some quantitative substance to this section and connection to the dense stellar cluster formation scenario.}
-
-At the end of the simulation \ha has 22 stars with masses greater than 1000 \msolar with the most
-massive star having a mass of 6128 \msolarc. The simulations show that accretion onto the stars is
+We begin this section by analysing the stellar content of \ha and in particular the likelihood
+that \ha will undergo two-body collisional processes akin to the runaway collapse of a dense stellar
+cluster \citep{PortegiesZwart_2004, Gurkan_2004, Freitag_2006, Regan_2009b, Katz_2015}. In Figure
+\ref{Fig:Collisions} we plot both the collisional time for the stars in \ha and the relaxation
+time of the stellar system in \ha as a
+function radius. The collisional time, t$_{\rm{coll}}$, for a stellar population consisting of two
+populations can be written as \citep{Freitag_2008}:
+\begin{equation}
+  t_{\rm{coll}} = 5 \ \rm{Gyr} \Big( {10^6 \over n_*} \Big ) \Big( {\sigma_{vel} \over 10 \ \rm{km \ s^{-1}}} \Big ) \Big ({2 R_{\odot} \over R_1 + R_2} \Big) \Big ({2 M_{\odot} \over M_1 + M_2} \Big)
+\end{equation}
+where $n_*$ is the stellar density, $\sigma_{vel}$ is the one dimensional velocity dispersion,
+R$_1$ is the stellar radius of the first population of stars and R$_2$ is the stellar radius of the
+second population. We choose the median stellar mass, 683 \msolarc, for M$_1$ and we choose our
+maximum stellar mass, 6127 \msolarc, for M$_2$. The stellar radii are calculated using the standard
+formulae from \cite{Stahler_1986}. The collisonal time, plotted in blue, is a measure of time
+required for one
+stellar collision between these two populations. In orange we plot the relaxation time of the cluster.
+The relaxation time is the time required for the system to contract due to two body interactions in a
+populous cluster (N $\gg$ 10). The relaxation time is given by:
+\begin{equation}
+  t_{\rm{relax}} = 2 \ \rm{Myr} \Big ( {10 \over \lambda} \Big )  \Big( {10^6 \over n_*} \Big ) \Big( {\sigma_{vel} \over 10 \ \rm{km \ s^{-1}}} \Big )^3 \Big ( {1  M_{\odot} \over \langle m \rangle } \Big )^2
+\end{equation}
+where $\lambda = \ln (0.02 N)$ and  N is the number of cluster stars and $\langle m \rangle$
+is the median stellar mass. The collisional time, t$_{\rm{coll}}$, is greater than the Hubble time
+at all radii indicating that collisions are very unlikely for the stars in \ha. The relaxation time,
+t$_{\rm{relax}}$, is approximately 10 Myr at 1 pc. However, this time exceeds the lifetime of the
+stars in our cluster and contraction to very high densities appears unlikely and hence the
+runaway collapse of the cluster is not predicted. \\
+\indent This result is backed up by more recent investigations of black hole merging in similar
+environments as we now discuss. 
+At the end of the simulation \ha has 22 stars with masses greater than 1000 \msolar with
+the most massive star having a mass of 6128 \msolarc. The simulations show that accretion onto
+the stars is
 focused on the early stages in the life of the star with most of the mass accreted within the
 first 10 -- 20 kyr. Therefore, if we assume that the proto-galaxy gets populated with a plethora of
 weakly accreting black holes early in the proto-galactic evolution then it is reasonable to ask \textit{what are the prospects for the merger of this first generation
-  of black holes into a population of more massive black holes?}.\\
+  of black holes into a population of more massive black holes?}\\
 \indent \cite{Pfister_2019} investigated the merging of black holes in high resolution
 simulations ($\Delta x \sim 10$ pc) with black hole masses in the range
 $10^4$ \msolar to $10^5$ \msolar in high-z galaxies. They found that dynamical friction from stars
@@ -909,7 +950,7 @@ be able to differentiate between PopIII star formation and SMS star formation, a
 for a longer time period and beyond the formation of the subsequent black holes.
 Tracking the evolution of these truly seed black holes is the next frontier. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
    \centering 
 \includegraphics[width=0.525\textwidth]{FIGURES/Sensitivity.pdf}
