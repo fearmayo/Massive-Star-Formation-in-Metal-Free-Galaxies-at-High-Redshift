@@ -114,7 +114,7 @@
   move to lower density regions. We post-process the impact of ionising radiation from the stars and
   find that ionising radiation is not a limiting factor when considering SMS formation
   and growth. Rather the birth environments are highly turbulent and a steady accretion flow is not
-  maintained within the timescale (2 Myrs) of our simulations. \jhw{Is this similar to present-day star formation?} As the massive stars end their lives
+  maintained within the timescale (2 Myrs) of our simulations. As the massive stars end their lives
   as direct collapse black holes this will seed these embryonic haloes with a population of black
   holes with masses between 1000 \msolar and 10,000 \msolarc.
   Afterwards they may sink to the centre of the haloes, eventually coalescing to form larger
@@ -153,7 +153,7 @@ rate the star contracts to the main sequence and becomes a hyper-luminous PopIII
 star with a mass set approximately by the mass at which the accretion rate dropped.
 When the accretion rate is maintained the star grows rapidly but emits
 only weak radiative feedback with the spectrum of the emitted radiation peaking below
-the hydrogen \change{ionisation} limit \citep{Woods_2018}. \\
+the hydrogen ionisation limit \citep{Woods_2018}. \\
 \indent As discussed, the key requirement for
 forming a SMS is that the mass accretion rate onto the star exceeds approximately 0.04 \msolaryrc,
 however, a sufficient baryon reservoir is also required and furthermore the metallicity of the gas
@@ -175,9 +175,6 @@ In this study we build on the previous works cited above. \\
   Such haloes have recently been identified in the Renaissance datasets \citep{Wise_2019, Regan_2020}
   as promising candidates for forming (super-)massive stars.  To pursue this research we re-simulate
   two haloes from the original Renaissance simulations using the zoom technique.
-  
-  \note{From this point onwards, this information is probably best stated in the methods section.  If you choose to move it, we probably want to summarize the reasons of the re-simulation rather than an analysis of the Renaissance Simulations.}
-  
   We designate
   these haloes as \ha and \hbc. Both haloes were chosen as they exhibited near isothermal
   collapse of their inner core in the original Renaissance datasets as shown by \cite{Regan_2020}.
@@ -367,7 +364,7 @@ divergence theorem to the volume integral of the accretion zone \citep[e.g][]{Bl
 where $\dot{M}$ is the mass accretion rate, $\Omega$ is the accretion zone over which we integrate,
 $\rho$ is the
 density of the cells intersecting the surface, $v_r^-$ is the velocity of cells intersecting
-the surface which have negative radial velocities and $r$ is the radius of our surface. \jhw{This is not a surface integral if $r$ is the integration variable. Here we state that $r$ is the radius of the surface, which is constant. The integration element should be $dA = r^2 d\Omega$. How is $d\Omega$ calculated in terms of the cell width?} \jr{I think this is ok. I am applying Gauss's divergence theorem to the volume integral (hence r enters) which is an easy way to compute the flux passing through the surface. I think I was missing a 4 $\pi$ though. That's corrected now and I've also clarified that I use Gauss's theorem}. As noted above we
+the surface which have negative radial velocities and $r$ is the radius of our surface. As noted above we
 set the accretion radius to be 4 cells. The accretion onto the star is calculated at each timestep,
 however this is likely to be a very noisy metric. To alleviate this to some degree we average
 the accretion rate over intervals of 1 kyr and use that averaged accretion rate in data outputs. The accretion rate is added as an attribute to each star and hence a full
@@ -376,13 +373,6 @@ are also included in the accretion onto the stars. In this case the more massive
 information (e.g., age, type, etc.) after the merger event - information on the less massive star is
 lost. The mass of the less massive star is added to the accretion rate of the more massive star for
 that timestep. Stars are merged when they come within 3 times the accretion radius of each other (i.e. 12 cell lengths).
-\jhw{Where does this factor of three come from? Krumholz+ (2004)? In my SS-runs, I've set it equal to the accretion radius.}
-\jr{It's just the code choice I made. It's not clear what the merger radius should be. Krumholz put theirs the
-  same as the accretion radius but that's not required per-se. Setting it to be the accretion radius means that
-  particles are very close before being merged. Twice the accretion radius means the accretion radii are touching.
-  I felt three was ok too since below this scale we enter a regime where we possibly start to lose resolution.
-  Three is probably the maximum in fairness. I tested this extensively at the time and found it worked well.}
-  
 \indent Each star also has the ability to provide both radiative and mechanical feedback, which is
 most appropriate in the case where the star has transitioned into a (accreting) black hole. As the
 accretion rate onto the star varies the star can transition its type from a SMS, with an inflated
@@ -729,8 +719,7 @@ The temperature, \molH fraction, enclosed gas mass and mass inflow rate are show
 \indent \ha shows near isothermal collapse, although the gas does
 show some degree of cooling at approximately 10 pc. The \molH fraction is very different between
 the two haloes, with \ha showing a steep decline in \molH towards the centre due to the combination
-of the LW background and the rapid assembly of mass. \jhw{I don't think it's caused by the LW background because the core would be shielded and have a higher H2 fraction than the outer halo.  But I agree that the dissociation could be caused by the rapid assembly, higher infall rates, and higher post-shock temperatures. But on the other hand, the increased electron fraction in the stronger shocks should promote H2 formation.} \jr{The self-shielding kicks in at about 10 pc though and the decline in temperature
-  occurs outside of that radii. Would you not think that some of the \molH decline could be attributed to the LW radiation? I think some of the heating is due to the infall and the associated KE of the gas and no coolant being available. }\hb on the other-hand shows a more typical
+of the LW background and the rapid assembly of mass. \hb on the other-hand shows a more typical
 \molH evolution consistent with mini-halo formation. The enclosed mass plot in the top right panel
 illustrates the different mass associated with each halo as a function of radius. \ha being well
 inside the atomic cooling mass range. In the bottom right hand panel we see the mass inflow rate for
@@ -753,7 +742,7 @@ it stops growing. The mass evolution of the most massive star in
 \hb is a little different. In this case the star accretes slower at approximately $10^{-3}$
 \msolaryr (see right panel). What then drives the star to increase its mass is a stellar merger
 with another star. This occurs when the main progenitor star is approximately 200 kyr old and
-results in a star of 173 \msolarc. \jhw{Is this physical, especially since it's 200~kyr after its creation?  We might want a statement giving a caveat or two.} \jr{I think 200 kyr is ok. That's a long time after its creation. That's thousands of timesteps?}\\
+results in a star of 173 \msolarc.\\
 \indent In the right hand panel of Figure \ref{Fig:AccretionRates} we see the accretion rates onto
 the most massive star and onto the median star for each simulation. Initially each star follows approximately the mass accretion rate as found in the radial profiles (see Figure \ref{Fig:RadialProfiles}).
 However, in both cases after a few tens of kyrs the accretion rate onto each star drops dramatically and mass growth is halted. This drop in accretion is not due to feedback since no ionising feedback
@@ -775,7 +764,8 @@ flow into a single object. While this is possible it is clearly going to be
 very challenging given the turbulent nature of the environment in which these stars are forming.
 What appears more likely, for this halo at least, is that the 
 most massive star(s) in the halo will form of population of intermediate mass black holes
-(IMBHs) with masses ranging from 1000 \msolar to several thousand \msolarc. \jhw{We could use 300 \msolar as a lower limit because these are still technically IMBHs.} The subsequent
+(IMBHs) with masses ranging from 300 \msolar to several thousand \msolarc.
+The subsequent
 growth of these IMBHs within the halo then through 
 mergers and accretion will then slowly build the black hole mass. 
 Nonetheless, the key issue with forming a monolithic SMS appears to be that
@@ -841,7 +831,7 @@ simulations ($\Delta x \sim 10$ pc) with black hole masses in the range
 $10^4$ \msolar to $10^5$ \msolar in high-z galaxies. They found that dynamical friction from stars
 has a more stabilizing effect on the black holes than the gas component but that the stellar
 distribution in high-z galaxies is highly irregular and hence is not able to stabilise the black
-hole orbits. \jhw{Does the gas dynamical friction depend on the densities? I'd think that given our higher resolution and densities, the dynamical friction should be stronger.}  \jr{Yes the drag depends linearly on the density and the mass of the object (e.g. black hole). While our densities are higher our particle masses are also lower so on balance we may not see much difference?}
+hole orbits.
 The irregular stellar distributions found by \cite{Pfister_2019} correlates with what
 we see in our simulations here. \cite{Pfister_2019} found that black holes with masses less than
 $10^5$ \msolar do not sink to the centre of a galaxy, but instead exhibit random walk characteristics.
@@ -864,7 +854,8 @@ stars form (especially \hac) contain a web of dense gaseous filaments which may 
 the necessary ram pressure and extract orbital energy. 
 What then does this mean for potential gravitational wave detection?\\
 \indent Within approximately 4 Myr after the formation of the first massive stars here there
-will be a population of black hole seeds with masses in the range 1000 \msolar up to 6000 \msolar
+will be a population of black hole seeds with masses in the range 300 \msolar (upper limit of pair
+instability supernovae) up to 6000 \msolar
 (and likely higher). In Figure \ref{Fig:Sensitivity} we plot the characteristic strain
 expected from the merger of two black holes with masses of 5000 \msolar each at $z = 15$.
 These masses are consistent with the masses of the stars found in this simulation and black holes
