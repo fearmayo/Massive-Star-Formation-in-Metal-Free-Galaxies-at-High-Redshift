@@ -365,16 +365,25 @@ that timestep. Stars are merged when they come within 3 times the accretion radi
 \centerline{
 \includegraphics[width=0.49\textwidth]{FIGURES/Ionisation.pdf}
 \includegraphics[width=0.49\textwidth]{FIGURES/Recombination.pdf}}
-\caption{\textit{Left Panel:} The percentage of the inner volume ionised in each halo. For both \ha
-  and \hb we show the ionised volume in spheres surrounding the most massive star. We do this a
-  radius of 1 pc and 5 pc in both cases. For \ha ...
+\caption{\textit{Left Panel:} The percentage of the inner volume ionised in each halo
+  due to all stars as a function of time. In each case the volume is centred on the
+  most massive star at that time. Two radii are considered, a radius of 1 pc from the
+  most massive star is shown as a solid line, a radius of 5 pc is shown as a
+  dashed line. \ha is shown in blue, \hb in red. For both haloes the 1 pc volume srrounding the
+  most massive star always becomes ionised but as we look to the 
+  larger region (5 pc) the medium remains quite neutral. Note that for \ha the
+  most massive star changes over time and this is reflected in the ionisation spikes seen.
+  The first spike, where the volume becomes ionised quickly (at approximately 700 kyr) is at
+  least partially due to the star moving to a lower density environment. 
   For \hb after approximately 1800 kyr the gas within 1 pc of the most massive star has become
   fully ionised. However, at a radius of 5 pc the gas shows virtually no ionisation. So while the
-  stars are able to ionise their immediate surroundings (after $\sim 1000$ kyr in the case of \hb)
+  stars are able to ionise their immediate surroundings
   the radiative feedback does not penetrate much further than a pc. 
   \textit{Right Panel:} The ratio of the ionising photon luminosity and the total integrated
-  recombination rate of the gas. For \ha ...
-  For \hb the results are similar to the volume averaged
+  recombination rate of the gas. For \ha we see a similar trend to the left panel. The most massive star
+  , at a time less than $\sim 1000$ kyr is quickly able to ionise its surroundings. However, at
+  larger radii (and also at later times for \hac) the gas remains neutral. 
+  For \hb the results are again similar to the volume averaged
   calculation. At 1 pc the region becomes fully ionised after approximately 1000 kyr but again
   at a radius 5 pc the region remains virtually unaffected.
   %This is due to the multitude of dense clumps and filaments.
@@ -456,8 +465,20 @@ projection is scaled as $\rm{R_{star}} \propto \rm{M_{star}^{0.6}}$.}\label{Fig:
 
 \subsection{Post-Processing with Cloudy}
 \label{cloudy:description}
-{\sc Cloudy} \citep{Ferland_2017} is a spectral synthesis code which models radiative transfer through a gas, and its resulting thermal and chemical equilibrium, under a wide range of conditions encompassing those expected for interstellar matter. %For primordial gas in the density and temperature range presently considered, 
-The code relies on a number of databases for computing the behaviour of atoms and molecules, including tabulated recombination coefficients obtained from \cite{Badnell_2003} and \cite{Badnell_2006}, with Case A and B recombination predictions for single-electron systems from \cite{Storey_1995} and He I recombination rates from \cite{Porter_2012}, as well as ionic emission data from the CHIANTI database \citep{Dere_1997,Dere_2012}. Its chief limitation is that it is largely constrained to modelling environments in 1-D and/or assuming spherical symmetry \citep[though see, e.g.,][for recent efforts to extend its implementation to pseudo-3D problems]{Morisset_2013, Fitzgerald_2020}. For this reason, and because we do not follow the stellar evolution of each formed star in detail, we must make a number of simplifying approximations in using {\sc cloudy} to estimate the impact of ionising feedback. 
+      {\sc Cloudy} \citep{Ferland_2017} is a spectral synthesis code which models radiative transfer
+      through a gas, and its resulting thermal and chemical equilibrium, under a wide range of conditions
+      encompassing those expected for interstellar matter. %For primordial gas in the density and temperature range presently considered, 
+      The code relies on a number of databases for computing the behaviour of atoms and molecules,
+      including tabulated recombination coefficients obtained from \cite{Badnell_2003}
+      and \cite{Badnell_2006}, with Case A and B recombination predictions for single-electron
+      systems from \cite{Storey_1995} and He I recombination rates from \cite{Porter_2012},
+      as well as ionic emission data from the CHIANTI database \citep{Dere_1997,Dere_2012}.
+      Its chief limitation is that it is largely constrained to modelling environments in 1-D
+      and/or assuming spherical symmetry \citep[though see, e.g.,][for recent efforts to extend
+        its implementation to pseudo-3D problems]{Morisset_2013, Fitzgerald_2020}. For this
+      reason, and because we do not follow the stellar evolution of each formed star in detail,
+      we must make a number of simplifying approximations in using {\sc cloudy} to estimate
+      the impact of ionising feedback. 
 
 For each halo, we consider the ionising feedback for a range of times between 1~kyr and 2000~kyr
 after the initial star formation has commenced. For each snapshot, we divide the stars formed between
@@ -476,7 +497,8 @@ in width, centred on each star in the halo, and primordial abundance ratios take
 1.0:0.08232:1.6e-10:1e-16 for H:He:Li:Be \citep[consistent with the results of the][table 2, see
   {\sc cloudy} documentation for further discussion]{Planck_2014}. We assume an inner boundary
 of $10^{15}$ cm ($\sim 3 \times 10^{-4}$ pc) and terminate our calculations at the outer boundary of
-each nebula once either the gas temperature falls to 8000 K or the electron fraction falls below 5\%. Modelling the ionized nebula associated with each star in this way does not account for the
+each nebula once either the gas temperature falls to 8000 K or the electron fraction falls below 5\%.
+Modelling the ionized nebula associated with each star in this way does not account for the
 overlapping of Str{\"o}mgren spheres associated with distinct stars; we address this point and
 further limitations in $\S$\ref{cloudy:results}.
 
@@ -484,16 +506,22 @@ further limitations in $\S$\ref{cloudy:results}.
 \section{Results} \label{Sec:Results}
 
 \subsection{Conditions for (Super-)Massive Star Formation}
-As noted in \S \ref{Sec:Introduction} the goal of this study is to model the formation of SMS formation in haloes which are experiencing both LW feedback from nearby galaxies and dynamical heating from mergers. Both of these effects suppress the formation of regular PopIII stars in haloes
-below the atomic cooling limit and hence may lead to the formation of a SMS in a larger halo  \citep[as was found in][]{Wise_2019}. In this study we include 
+As noted in \S \ref{Sec:Introduction} the goal of this study is to model the formation of
+SMS formation in haloes which are experiencing both LW feedback from nearby galaxies and
+dynamical heating from mergers. Both of these effects suppress the formation of regular
+PopIII stars in haloes
+below the atomic cooling limit and hence may lead to the formation of a SMS in a larger
+halo  \citep[as was found in][]{Wise_2019}. In this study we include 
 sub-grid star formation prescriptions to follow the star formation process in 
 two of these candidate haloes.\\
 \indent In the left hand panel of Figure \ref{Fig:LWHistory} we show the LW history that \ha is
 exposed to throughout its re-simulation. As discussed in \S \ref{Sec:Methods} the LW field at the
 location of the halo is determined from the original simulation, which included star formation
-in all of the surrounding haloes. In the re-simulation the adapative mesh refinement grids are focused only around the
+in all of the surrounding haloes. In the re-simulation the adapative mesh refinement
+grids are focused only around the
 target halo and so the LW field must be imposed as a global background, albeit focused on a single
-halo. As can be seen in the left hand panel of Figure \ref{Fig:LWHistory} the LW field is very flat and sits below \JLW \ $\sim 2$
+halo. As can be seen in the left hand panel of Figure \ref{Fig:LWHistory} the LW field is
+very flat and sits below \JLW \ $\sim 2$
 J$_{21}$ until a redshift of $z \sim 16.5$ at which point it increases strongly due to a nearby source
 which undergoes a starburst and emits copious amounts of LW radiation
 (and ionising radiation\footnote{The
@@ -501,15 +529,16 @@ which undergoes a starburst and emits copious amounts of LW radiation
 direction of \hac. The LW field reaches its zenith at a redshift of $z \sim 15.8$ and thereafter
 starts to decline. The green circle at $z = 15.6$ represents the redshift at which the halo was
 detected as a metal-free and star-free atomic cooling halo in the original simulations
-\citep[see][for details]{Regan_2020}. The black star indicates the redshift at which star formation begins in this
-re-simulation ($z = 15.05$). \\
+\citep[see][for details]{Regan_2020}. The black star indicates the redshift at which star
+formation begins in this re-simulation ($z = 15.05$). \\
 \indent In the right hand panel we show the merger history of both \ha and \hb
 as found in the original simulations. The mergers, both major and minor, drive the dynamical heating
 which heats the gas and delays star formation \citep{Wise_2019}. 
 \ha experiences a major merger starting at $z \sim 16.2$ and lasts until $z \sim 15.7$. This
 merger, in combination with the LW field, suppresses star formation until z = 15.05 (again the green
 circles denotes the time of collapse in the original, lower resolution, simulations). The merger
-history of \hb is shown as the red line. Recall that \hb is run without any LW background as a control case. As a
+history of \hb is shown as the red line. Recall that \hb is run without any LW background as
+a control case. As a
 result star formation is triggered at $z = 17.21$. Using the results from the original simulation
 which allows us to see the future evolution of that halo we see that immediately after star formation
 the halo undergoes a major merger. It is therefore highly likely that, in the absence of a suppressing
@@ -517,7 +546,8 @@ LW background, the merger triggers star formation, which in the original simulat
 suppressed until after $z = 15$. Therefore, we can see here that the absence of the background
 LW radiation field was sufficient to allow PopIII star formation to take place. Dynamical heating
 by itself was not sufficient for this halo to avoid star formation. \\
-\indent Star formation occurs in both \ha and \hb when they are at very different phases in their evolution.
+\indent Star formation occurs in both \ha and \hb when they are at very different phases in
+their evolution.
 In \ha the mass of the halo is significantly above the atomic cooling limit
 (M$_{\rm{HaloA}} = 9.3 \times 10^7$ \msolarc) and the halo has
 remained metal-free. \hbc, on the other hand, collapses early with a mass of
@@ -533,12 +563,14 @@ quench further star formation through photoionisation in each halo.
 \centerline{
 \includegraphics[width=0.52\textwidth]{FIGURES/HaloA/Proj_z_number_density_2001.pdf}
 \includegraphics[width=0.52\textwidth]{FIGURES/HaloB/Proj_z_number_density_1844.pdf}}
-\caption{Both panels show the projected number density$^3$ in each halo at the end of each simulation. The
-  left panel shows \ha while the right panel shows \hbc.
-  The legend in each figure gives the mass of the five most massive stars at the final output time, as well as
+\caption{Both panels show the projected number density$^3$ in each halo at the end of each
+  simulation. The left panel shows \ha while the right panel shows \hbc.
+  The legend in each figure gives the mass of the five most massive stars at the final output
+  time, as well as
   the age of the star at that time. The extent of each panel is 20 pc (physical). The orange
-  star in each case represents the most massive star. Blue stars are those stars (normal PopIII stars) for
-  which the rate is below the critical rate (0.04 \msolaryrc) for SMS formation. At the times shown no
+  star in each case represents the most massive star. Blue stars are those stars
+  (normal PopIII stars) for which the rate is below the critical rate (0.04 \msolaryrc) for
+  SMS formation. At the times shown no
   SMSs exist in either simulation because the accretion rate onto each star is less than the
   critical rate.  For illustrative purposes the size of each star in the
   projection is scaled as $\rm{R_{star}} \propto \rm{M_{star}^{0.6}}$.}  \label{Fig:ProjectionEnd}
@@ -606,26 +638,15 @@ quench further star formation through photoionisation in each halo.
 %% \end{table}
 
 \subsection{Determining the time of star formation quenching}\label{cloudy:results}
-
-\jr{Tyrone I think we should change the argument here to be along the lines of ``For \ha and \hb
-  we calculate the fraction of gas that is ionised in each halo out to a radius of 5 pc.
-  We find that at a radius of 5 pc the level of ionisation due to star formation in each halo is
-  negligible implying that although the impact of ionising radiation is neglected in our
-  simulations the impact of neglecting this process is negligible. We do find that within 1 pc of each star the gas becomes ionised but that dense gas beyond this radius is able to self-shield....''. What do you think?}\\
-
 To assess the impact of photoionising stellar feedback, we must investigate the ionisation state
-of the gas in the innermost star-forming regions of each halo. Here we adopt an heuristic
-definition of ``innermost region,'' based on their relative sizes and masses and the star
-formation seen in our models. For \ha we adopt an inner region of 5 pc. Using the most massive
-star as the centre approximately 90\% of the stellar mass resides inside this inner region. For \hb
-we adopt an inner region of radius 1 pc centred on the most massive star. For \hb 90\% of the
-stellar mass resides inside this inner 1 pc region.   
-%for \ha we adopt the inner 5 pc, and for \hb the inner 1 pc, in each case centred on the most massive star within each halo at each chosen time (for \ha 503, 732, 998, 1107, 1282, 1412, 1500, 1609, 1718, 1783, 1892, and 2023 kyr; for \hb 469, 732, 994, 1103, and 1354 kyr).
-\jhw{Why did you choose 5pc and 1pc? Is there a physical scale that we can relate to, like the Jeans mass?} \jr{It was an estimate based on the separation of the stars. This separation tends to
-  increase by a factor of a few though over time. 5 pc and 1 pc are very good for the first
-  few hundred kyr but after say a Myr the stars do spread out. I've asked Tyrone to redo the
-  cloudy analysis using a volume of 20 pc and 5 pc respectively to see how it changes the result}
-We may then evaluate the evolution of both the total ionised volume and the total ionisation budget through each snapshot, in order to provide subtly distinct but complementary measures of the strength of stellar feedback.
+of the gas in the innermost star-forming regions of each halo.
+Here we adopt two different radii at which to calculate the ionisation state of the gas.
+We use a radius of 1 pc to estimate the ionisation state of the case close to the most massive star
+and we also use a radius of 5 pc to estimate the more ``large scale'' ionisation of the entire halo. 
+We use the same radii, at which to estimate the ionisation state of the gas, for both haloes
+for consistency. We then evaluate the evolution of both the total ionised volume and the
+total ionisation budget through each snapshot, in order to provide subtly distinct but
+complementary measures of the strength of stellar feedback.
 
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 5%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -649,26 +670,76 @@ We may then evaluate the evolution of both the total ionised volume and the tota
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-First, we compute the ionised volume associated with each thermally-relaxed star as described in \S\ref{cloudy:description}, and integrate the intersection of the union of these Str{\"o}mgren regions with the central star-forming region, as defined in the preceding paragraph for each halo, using a Monte Carlo approach.
-%For simplicity, here we neglect any overlap between the Str{\" o}mgren regions associated with each star, although we note a number of such overlapping regions at late times. A more precise estimate of the ionised volume would however necessitate a more detailed 3-D treatment of the radiative transfer which, as discussed above, is beyond the scope of this work; furthermore, 
-Note that for a constant combined ionizing luminosity, any reduction in ionised volume in accounting for overlaps in our spherically-symmetric Str{\"o}mgren spheres would in principle be compensated by the ionisation of a greater (though presumably not spherically symmetric) volume by the remaining available ionising photons. The extent to which this would raise the total ionized volume beyond our estimate depends sensitively on the local density distribution beyond each Str{\" o}mgren region.
+First, we compute the ionised volume associated with each thermally-relaxed star as
+described in \S\ref{cloudy:description}, and integrate the intersection of the union of these
+Str{\"o}mgren regions within the central star-forming regions, as defined in the preceding paragraph
+for each halo, using a Monte Carlo approach. Note that for a constant combined ionizing luminosity,
+any reduction in ionised volume in accounting for overlaps in our spherically-symmetric
+Str{\"o}mgren spheres would in principle be compensated by the ionisation of a greater
+(though presumably not spherically symmetric) volume by the remaining available
+ionising photons. The extent to which this would raise the total ionized volume beyond
+our estimate depends sensitively on the local density distribution beyond each Str{\" o}mgren region.
 
-Indeed, an alternative approach is to simply compare the ionizing photon luminosity of all stars within the inner star-forming region with the total integrated recombination rate of the gas if all hydrogen atoms were ionized; the latter sets the total emission rate of photons with E$>$13.6eV needed to maintain ionization of the star-forming region in equilibrium. This can be found from integrating over the hydrogen number density:
+Indeed, an alternative approach is to simply compare the ionizing photon luminosity of all stars
+within the inner star-forming region with the total integrated recombination rate of the gas if
+all hydrogen atoms were ionized; the latter sets the total emission rate of photons with
+E$>$13.6eV needed to maintain ionization of the star-forming region in equilibrium. This can be
+found from integrating over the hydrogen number density:
 
 \begin{equation}
     \dot R = \int_{\rm{V}}\alpha_{\rm{B}}(\rm{H}^{0},T)n_{\rm{H}}^{2}(r)d\rm{V}
 \end{equation}
 
-\noindent where $n_{\rm{H}}(r, t)$ is the spherically-averaged density profile centered on the most massive star in the Halo at time $t$ (see above), and $\alpha_{\rm{B}}(\rm{H}^{0},T)$ is the case B recombination coefficient for hydrogen, which we take as $\approx1.4\times 10^{-13}\rm{cm}^{3}\rm{s}^{-1}$ for primordial gas at a temperature typical of plasmas photoionized by Population III stars, $\rm{T}\sim 2\times 10^{4}$K \citep{Osterbrock2006, Johnson2012}. 
+\noindent where $n_{\rm{H}}(r, t)$ is the spherically-averaged density profile centered on the
+most massive star in the Halo at time $t$ (see above), and $\alpha_{\rm{B}}(\rm{H}^{0},T)$ is the
+case B recombination coefficient for hydrogen, which we take
+as $\approx1.4\times 10^{-13}\rm{cm}^{3}\rm{s}^{-1}$ for primordial gas at a temperature typical of
+plasmas photoionized by Population III stars, $\rm{T}\sim 2\times 10^{4}$K
+\citep{Osterbrock2006, Johnson2012}. 
 
-These two measures of the strength of ionizing stellar feedback are compared in Figure \ref{Fig:Ionisation}. The left panel shows the volume ionised fraction of the innermost region as a function of time, while the right panel shows
-the fractional ionising budget as a function of time.  \jhw{It might also be interesting to show the average Str{\"o}mgren radius, i.e. $(3V/4\pi N_\star)^{1/3}$ in the left panel.} Note that the ionized volume (left panel) and the fractional ionising photon budget (right panel) do not necessarily
-move perfectly in tandem. This is partly due to our simplified treatment as described above, including overlapping Str{\" o}mgren regions and spherically-averaged density profiles, but also
-reflects the variable density distribution, with the lowest density regions preferentially ionised over high-density knots. In particular, in both \ha and \hb we see a marked rise in the
-ionized volume between $\sim 500$ and $\sim1200$ kyr, however only for \hb is this matched by a similar rise in the fractional ionizing photon budget. For \hb both measures show a fully ionised medium
-after approximately 1000 kyr. \ha on the other-hand shows an initial ionisation of the central gas medium but that ionisation level saturates at approximately 40\% after approximately 1500 kyr. The fractional
-ionisation budget remains very low with recombinations dominating - this reflects the web of dense filaments and knots that pervade the inner regions of \hac. \\
-\indent In summary, ionizing stellar emission is likely to shut down star formation in \hb $\sim 1.1$ Myr after the first stars have formed. At the same time in its evolution, the much denser gas in the central region of \ha is more robust against stellar feedback, albeit with the latter growing in importance at this point. Our results indicate that star formation and accretion in \ha are unlikely to be shut down prior to the onset of supernova feedback and chemical enrichment of the halo, before $\sim$ 2 Myr, at which time the first generation of stars reach the end of their lives. 
+These two measures of the strength of ionizing stellar feedback are compared in
+Figure \ref{Fig:Ionisation}. The left panel shows the volume ionised fraction of the innermost
+region as a function of time, while the right panel shows
+the fractional ionising budget as a function of time. The ionisation state of the gas is shown in
+blue for \ha and red for \hbc. Calculations with a 1 pc sphere are shown as solid line, calculations
+with a 5 pc radius are shown as dashed lines. Note that the ionized volume (left panel)
+and the fractional ionising photon budget (right panel) do not necessarily
+move perfectly in tandem. This is partly due to our simplified treatment as described above,
+including overlapping Str{\" o}mgren regions and spherically-averaged density profiles, but also
+reflects the variable density distribution, with the lowest density regions preferentially
+ionised over high-density knots. \\
+\indent Considering first the left hand panel, in both \ha and \hb we see a marked rise in the
+ionized volume between $\sim 500$ and $\sim1200$ kyr when measured in a sphere of 1 pc, this is
+matched in both cases by a similar rise in the fractional ionizing photon budget (right panel).
+While for \hb the gas remains ionised (solid red line) in \ha we see a sharp rise matched by a
+sharp drop (solid blue line). This is because the most massive star in the simulation switches at
+approximately 750 kyr as another star's accretion rate gives it a larger mass. Prior to this time
+the most massive star easily ionises its immediate
+surrouning and this is at least partly because the star also moves into a lower density region
+(very similar to what happens in \hbc). After 750 kyr the most massive star becomes embedded in
+dense filaments and its ability to ionise even its immediate surroundings is blunted (and hence the
+ionisation fraction hovers between approximately 0.2 and 0.4). The
+right hand panel shows a similar result for \ha with the most massive star, prior to 750 kyr, easily
+able to ionise
+its immediate surroundings, however, after this point, with the most massive star more centrally
+located, recombinations dominate. When considering the larger 5 pc radius (dashed blue line)
+ionisation becomes much more difficult. In the left hand panel we see that the 5 pc region
+is approximately 40\% ionised by 2000 kyr but if we look at the right hand panel we see that recombinations are still overwhelmingly dominant. This is because \ha contains a plethora of dense knots and
+filaments in which recmonations are dominant and into which ionising photons cannot penetrate. \\
+\indent For \hb both measures, at 1 pc,  show a fully ionised medium
+after approximately 1000 kyr. The most massive star has a mass of 173 \msolar and crucially
+it moves to a lower
+density region away from the central over-density. However, like \hac, using a radius of 5 pc shows
+a medium whose ionisation state remains low reflecting the fact that while the stars are very
+massive and easily able to ionise their immediate surroundings they are not yet numerous enough
+to ionise the entire halo. \\
+\indent In summary, ionizing stellar emission is unlikely to shut down star formation in
+either halo prior to the onset of chemical and radiative emission from the supernovae
+explosions expected to occur for some of the stars approximately 2 Myr  after their formation. In
+this case of \ha this is particularly important. \ha contains a number of hyper-luminous PopIII stars
+however, the much denser gas in the central region of \ha is robust against stellar feedback,
+albeit with the latter growing in importance as the simulation progresses (see left panel
+of Figure \ref{Fig:Ionisation}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Radial Profiles prior to formation
