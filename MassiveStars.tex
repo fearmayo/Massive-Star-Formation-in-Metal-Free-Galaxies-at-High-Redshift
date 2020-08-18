@@ -1,9 +1,10 @@
-\documentclass[graphics, twocolumn, usenatbib]{mn2e}
-\usepackage[utf8]{inputenc}
-\usepackage{times}
+%\documentclass[graphics, twocolumn, usenatbib]{mn2e}
+\documentclass[twocolumn,iop,revtex4]{openjournal}
+%\usepackage[utf8]{inputenc}
+%\usepackage{times}
 \usepackage{natbib} 
-\usepackage{epsfig} 
-\usepackage{graphicx} 
+%\usepackage{epsfig} 
+%\usepackage{graphicx} 
 \usepackage[dvipsnames]{xcolor}
 %\usepackage{deluxetable} 
 \usepackage{aas_macros} 
@@ -13,7 +14,7 @@
 \usepackage{hyperref}	% Hyperlinks
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
 \usepackage[caption=false]{subfig}
-\usepackage{soul}                          % provides \hl{} for highlighting
+%\usepackage{soul}                          % provides \hl{} for highlighting
 \usepackage{ulem} \normalem 
 \usepackage{xifthen}
 \newcommand{\lya}{Lyman-$\alpha$~}
@@ -85,22 +86,29 @@
 
 \begin{document}
 \title[Very Massive Star Formation in Early Galaxies]{The Formation of Very Massive Stars in Early Galaxies and Implications for Intermediate Mass Black Holes}
-\author[J. A. Regan, J. H. Wise,  T. E. Woods, T.P. Downes, B.W. O'Shea \&  M.L. Norman]{John A. Regan$^{1,2}$\thanks{E-mail:john.regan@mu.ie},
-  John H. Wise$^{3}$, Tyrone E. Woods$^{4}$, Turlough P. Downes$^{2}$, \newauthor Brian W. O'Shea$^{5,6,7,8}$ \& Michael L. Norman$^9$\\
-  $^1$Department of Theoretical Physics, Maynooth University, Ireland\\
-  $^2$Centre for Astrophysics \& Relativity, School of Mathematical Sciences, Dublin City University, Glasnevin, D09 W6Y4, Ireland\\
-  $^3$Center for Relativistic Astrophysics, Georgia Institute of Technology, 837 State Street, Atlanta, GA 30332, USA\\
-  $^4$National Research Council of Canada, Herzberg Astronomy \& Astrophysics Research Centre, 5071 West Saanich Road, Victoria, BC V9E 2E7, Canada\\
-  $^5$Department of Computational Mathematics, Science, and Engineering, Michigan State University, MI, 48823, USA\\    
-  $^6$Department of Physics and Astronomy, Michigan State University,MI, 48823, USA\\
-  $^7$National Superconducting Cyclotron Laboratory, Michigan State, University, MI, 48823, USA\\
-  $^8$Joint Institute for Nuclear Astrophysics - Center for the Evolution of the Elements, USA\\
-  $^9$Center for Astrophysics and Space Sciences, University of California, San Diego, 9500 Gilman Dr, La Jolla, CA 92093\\}
+\author{John A. Regan$^{1,2,*}$}
+\thanks{$^*$E-mail:john.regan@mu.ie, Royal Society - SFI University Research Fellow}
+\author{John H. Wise$^{3}$}
+\author{Tyrone E. Woods$^{4}$}
+\author{Turlough P. Downes$^{2}$}
+\author{Brian W. O'Shea$^{5,6,7, 8}$}
+\author{Michael L. Norman$^9$}
 
-\pubyear{2020}
-\label{firstpage}
-\pagerange{\pageref{firstpage}--\pageref{lastpage}}
-\maketitle
+
+\affiliation{$^1$Department of Theoretical Physics, Maynooth University, Maynooth, Ireland}
+\affiliation{$^2$Centre for Astrophysics \& Relativity, School of Mathematical Sciences, Dublin City University, Glasnevin, D09 W6Y4, Ireland}
+\affiliation{$^3$Center for Relativistic Astrophysics, Georgia Institute of Technology, 837 State Street, Atlanta, GA 30332, USA}
+\affiliation{$^4$National Research Council of Canada, Herzberg Astronomy \& Astrophysics Research Centre, 5071 West Saanich Road, Victoria, BC V9E 2E7, Canada}
+\affiliation{$^5$Department of Computational Mathematics, Science, and Engineering, Michigan State University, MI, 48823, USA}
+\affiliation{$^6$Department of Physics and Astronomy, Michigan State University,MI, 48823, USA}
+\affiliation{$^7$Joint Institute for Nuclear Astrophysics - Center for the Evolution of the Elements, USA}
+\affiliation{$^8$National Superconducting Cyclotron Laboratory, Michigan State, University, MI, 48823, USA}
+\affiliation{$^9$Center for Astrophysics and Space Sciences, University of California, San Diego, 9500 Gilman Dr, La Jolla, CA 92093}
+
+%\pubyear{2020}
+%\label{firstpage}
+%\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+%\maketitle
 
 \begin{abstract}
   We investigate the ab-initio formation of super-massive stars in a pristine atomic cooling halo.
@@ -121,9 +129,7 @@
   intermediate mass black holes whose in-situ mergers will be detectable by LISA. 
 \end{abstract}
 
-\begin{keywords}
-  Early Universe, Supermassive Stars, Star Formation, First Galaxies, Numerical Methods
-\end{keywords}
+\keywords{Early Universe, Supermassive Stars, Star Formation, First Galaxies, Numerical Methods}
 
 \section{Introduction} \label{Sec:Introduction}
 Supermassive stars (SMSs) with masses between $10^4$ and $10^5$ \msolar have over the past few decades been invoked \citep{Rees_1978, Begelman_1978, Begelman_2006,
@@ -191,7 +197,7 @@ the effects of dynamical heating can suppresses star formation below the atomic 
   \JLW $\sim 2$ J$_{21}$ existed). In \hb the most massive star in the halo has a mass of
   approximately 173 \msolarc. The impact of ionising radiation is not considered in these
   simulations but post-processing of the stellar feedback using \cloudy \citep{Ferland_2017} is
-  instead used to gauge the likely impact of ionising sources particularly for \ha which forms a
+  instead used to gauge the likely impact of ionising sources, particularly for \ha which forms a
   number of hyper-luminous PopIII stars. \\
   \indent The paper is laid out as follows: In \S \ref{Sec:Methods} we very briefly review the
   original Renaissance simulations as well as discussing the zoom-in simulations. In \S
@@ -383,7 +389,7 @@ that timestep. Stars are merged when they come within 3 times the accretion radi
   \textit{Right Panel:} The ratio of the ionising photon luminosity and the total integrated
   recombination rate of the gas. For \ha we see a similar trend to the left panel. The most massive
   star, at a time less than $\sim 750$ kyr is quickly able to ionise its surroundings. However, at
-  larger radii (and also at later times for \hac when the most massive star is embedded in the
+  larger radii (and also at later times for \ha when the most massive star is embedded in the
   central region) the gas remains neutral. 
   For \hb the results are again similar to the volume averaged
   calculation. At 1 pc the region becomes fully ionised after approximately 1000 kyr but again
@@ -430,7 +436,7 @@ accurately model radiation with energy above the ionisation threshold of hydroge
 self-shielding of \molH against LW radiation we use the prescription of \cite{Wolcott-Green_2011}.\\
 \indent As stars in this simulation contract to the main sequence, when the accretion rate onto the
 star drops, radiation above the hydrogen ionisation threshold is not initiated although in
-principle it should be and out radiative transfer scheme does support ionising radiation. The
+principle it should be and our radiative transfer scheme does support ionising radiation. The
 problem however is that the shocks generated near
 the star particle are too strong and unresolved for the PPM reconstruction scheme and HLLC Riemann
 solver to handle, the steep gradients cause the solution to overshoot to negative densities and
@@ -659,9 +665,9 @@ complementary measures of the strength of stellar feedback.
 \centerline{
     \includegraphics[width=18.0cm, height=12cm]{FIGURES/FinalMass_MultipleHaloes.pdf}}
 \caption{
-  The mass function for the stars that formed in \ha \hb over approximately 2 Myr.
-  Blue bars represent stellar masses from \ha while red bars represent stellar masses from \hb.
-  The dichotomy in masses in clearly evident with a strong bias towards more massive stars
+  The mass function for the stars that formed in \ha \& \hb over approximately 2 Myr.
+  Blue bars represent stellar masses from \ha while red bars represent stellar masses from \hbc.
+  The dichotomy in masses is clearly evident with a strong bias towards more massive stars
   in \hac. This is due to the higher temperatures in \ha compared to \hb which in turn
   leads to high infall rates to the centre and hence more mass available for proto-stars
   to accrete. The median mass for a single star in \ha is 683 \msolar and the median mass
@@ -710,21 +716,20 @@ move perfectly in tandem. This is partly due to our simplified treatment as desc
 including overlapping Str{\" o}mgren regions and spherically-averaged density profiles, but also
 reflects the variable density distribution, with the lowest density regions preferentially
 ionised over high-density knots. \\
-\indent Considering first the left hand panel, in both \ha and \hb we see a marked rise in the
-ionised volume between $\sim 500$ and $\sim1200$ kyr when measured in a sphere of 1 pc, this is
+\indent We begin by focusing on \hac. In the left hand panel, we see a marked rise in the
+ionised volume between $\sim 500$ and $\sim 1200$ kyr when measured in a sphere of 1 pc, this is
 matched in both cases by a similar rise in the fractional ionising photon budget (right panel).
-While for \hb the gas remains ionised (solid red line) in \ha we see a sharp rise matched by a
-sharp drop (solid blue line). This is because the most massive star in the simulation switches at
-approximately 750 kyr as another star's accretion rate gives it a larger mass. Prior to this time
-the most massive star easily ionises its immediate
+In \ha we see a sharp rise matched by a sharp drop (solid blue line). This is because the most
+massive star in the simulation switches at approximately 1000 kyr as another star's accretion rate
+gives it a larger mass. Prior to this time the most massive star easily ionises its immediate
 surrounding and this is at least partly because the star also moves into a lower density region
-(very similar to what happens in \hbc). \\
-\indent After 750 kyr the most massive star \change[]{in \ha} becomes embedded in
+(something similar occurs in \hbc). \\
+\indent After 1000 kyr the most massive star in \ha becomes embedded in
 dense filaments and its ability to ionise even its immediate surroundings is blunted (and hence the
-ionisation fraction hovers between approximately \change[0.2]{0.1} and 0.4). The
-right hand panel shows a similar result for \ha with the most massive star, prior to 750 kyr, easily
+ionisation fraction hovers between approximately 0.1 and 0.4). The
+right hand panel shows a similar result for \ha with the most massive star, prior to 1000 kyr, easily
 able to ionise
-its immediate surroundings, however, after this point, with the most massive star more centrally
+its immediate surroundings. However, after this point, with the most massive star more centrally
 located, recombinations dominate. When considering the larger 5 pc radius (dashed blue line)
 ionisation becomes much more difficult. In the left hand panel we see that the 5 pc region
 is approximately 40\% ionised by 2000 kyr but if we look at the right hand panel we see that recombinations are still overwhelmingly dominant. This is because \ha contains a plethora of dense knots and
@@ -890,7 +895,7 @@ results in a star of 173 \msolarc.\\
 \indent In the right hand panel of Figure \ref{Fig:AccretionRates} we see the accretion rates onto
 the most massive star and onto the median star for each simulation. Initially each star follows approximately the mass accretion rate as found in the radial profiles (see Figure \ref{Fig:RadialProfiles}).
 However, in both cases after a few tens of kyr the accretion rate onto each star drops dramatically and mass growth is halted. This drop in accretion is not due to feedback since no ionising feedback
-is present in these simulation. Instead mass accretion is terminated as the star accretes all the gas in its surroundings and moves into a less dense region of the inner halo. All of the stars formed have a small initial velocity of a few \kms, which it takes from the gas that initially formed the star. While this 
+is present in these simulations. Instead mass accretion is terminated as the star accretes all the gas in its surroundings and moves into a less dense region of the inner halo. All of the stars formed have a small initial velocity of a few \kms, which it takes from the gas that initially formed the star. While this 
 initial velocity is much smaller than the circular
 velocity of the host halo it does cause the stars to move around and decouple from the high density gas cloud in which they initially formed. \\
 \indent By the end of each simulation the total stellar mass in \ha is 90,000 \msolar and 1300
@@ -914,24 +919,13 @@ growth of these IMBHs within the halo then through
 mergers and accretion will then slowly build the black hole mass. 
 Nonetheless, the key issue with forming a monolithic SMS appears to be that
 these haloes are highly turbulent and that sustaining accretion onto a single
-object in such an environment is hugely challenging.
+object in such an environment is hugely challenging (see \cite{Chon_2017b} and \S
+\ref{Sec:Discussion} for a more detailed discussion).
 This conclusion is unlikely to be due to insufficient resolution: it is
 well-known that low resolution damps turbulent motion very significantly
 \citep[e.g.][]{Federrath_2010a, Downes_2012}. Thus insufficient resolution
 will lead to an {\it over-estimate} of the likelihood of forming an SMS.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-   \centering 
-\includegraphics[width=0.5\textwidth]{FIGURES/CollisionalTime.pdf}
-\caption{The collisional time and relaxation times for the stars in \hac. The collisional times is
-  an estimate of the time taken for a collision between two stellar populations. For the stars
-  in \ha the time taken for a single collision to occur exceeds the Hubble time at all radii.
-  The relaxation time is a measure of the time taken for the stellar system to contract to
-  higher density, perhaps driving a higher collision rate, due to
-  two body relaxation. For \ha the relaxation time is approximately 10 Myr at 1 pc. }
-\label{Fig:Collisions}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Intermediate Mass Black Hole Merging and Implications for Gravitational Wave detection} \label{Sec:GW}
 We begin this section by analysing the stellar content of \ha and in particular the likelihood
 that \ha will undergo two-body collisional processes akin to the runaway collapse of a dense stellar
@@ -960,14 +954,14 @@ is the median stellar mass. The collisional time, t$_{\rm{coll}}$, is greater th
 at all radii indicating that collisions are very unlikely for the stars in \hac. The relaxation time,
 t$_{\rm{relax}}$, is approximately 10 Myr at 1 pc. However, this time exceeds the lifetime of the
 stars in our cluster and contraction to very high densities appears unlikely and hence the
-runaway collapse of the cluster is not predicted. \\
+runaway collapse of the cluster is not predicted (or observed here). \\
 \indent This result is backed up by more recent investigations of black hole merging in similar
 environments as we now discuss. 
 At the end of the simulation \ha has 22 stars with masses greater than 1000 \msolar with
 the most massive star having a mass of 6127 \msolarc. The simulations show that accretion onto
 the stars is
 focused on the early stages in the life of the star with most of the mass accreted within the
-first 10 -- 20 kyr. Therefore, if we assume that the proto-galaxy gets populated with a plethora of
+first 100 kyr. Therefore, if we assume that the proto-galaxy gets populated with a plethora of
 weakly accreting black holes early in the proto-galactic evolution then it is reasonable to ask \textit{what are the prospects for the merger of this first generation
   of black holes into a population of more massive black holes?}\\
 \indent \cite{Pfister_2019} investigated the merging of black holes in high resolution
@@ -1012,8 +1006,8 @@ is approximately 32 and hence well within LISA's detection parameters\footnote{T
   using the LISA sensitivity calculator available at
   \url{github.com/eXtremeGravityInstitute/LISA_Sensitivity.git} \citep{Robson_2019}}.
 The merger of a 10,000 \msolar binary
-black hole system will enter the LISA band approximately 1 month before merger and complete
-thousands of orbits before merger. With this number of cycles LISA will be able to detect
+black hole system will enter the LISA band several 1 month before merger and complete
+thousands of orbits before the final plunge. With this number of cycles LISA will be able to detect
 the redshifted mass with a precision of close to 1\% \citep{Sesana_2013}. The largest uncertainty
 will however come from the determination of the redshift (or luminosity distance) which at this
 redshift is expected to have an uncertainty of approximately 30\% \citep{Sesana_2013}. Additional
@@ -1031,24 +1025,23 @@ discoverable by LISA significantly. This point was previously investigated by
 \cite{Hartwig_2018} as a method to discriminate between seed formation scenarios. Further,
 investigation of the number density of in-situ mergers and how they could influence the number
 of detections by LISA is now underway (Arridge et al. in prep).
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
    \centering 
-\includegraphics[width=0.525\textwidth]{FIGURES/Sensitivity.pdf}
-\caption{The LISA sensitivity curve with the strain due to two massive black holes each with a mass
-  of 5000 \msolarc. The merger of two 5000~\msolar black holes at $z = 15$ gives a
-  signal to noise ratio of 32 that is visible by LISA. The inspiral will enter the LISA band at
-  approximately $5 \times 10^{-4}$ Hz, corresponding to a time to merger of approximately 30 months.}
-\label{Fig:Sensitivity}
+\includegraphics[width=0.5\textwidth]{FIGURES/CollisionalTime.pdf}
+\caption{The collisional time and relaxation times for the stars in \hac. The collisional times is
+  an estimate of the time taken for a collision between two stellar populations. For the stars
+  in \ha the time taken for a single collision to occur exceeds the Hubble time at all radii.
+  The relaxation time is a measure of the time taken for the stellar system to contract to
+  higher density, perhaps driving a higher collision rate, due to
+  two body relaxation. For \ha the relaxation time is approximately 10 Myr at 1 pc. }
+\label{Fig:Collisions}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \section{Discussion and Conclusions} \label{Sec:Discussion}
 The aim of this study was to examine the prospect of (super-)massive star formation in haloes
-that were exposed to moderate LW radiation and also experienced significant dynamical heating
+that are exposed to moderate LW radiation and also experience significant dynamical heating
 effects due to mergers. We identified 79 such haloes in the Renaissance 
 datasets \citep{Regan_2020} and then subsequently selected two haloes, which showed no star formation or metal enrichment prior to reaching the
 atomic cooling limit, for re-simulation at enhanced resolution. These halo characteristics make these environments ideal for forming massive
@@ -1082,6 +1075,17 @@ thousands of solar masses form stars but also tidally disrupt other sub-clouds d
 accretion onto other (proto-)stars. This phenomenon is observed in all of the stars formed in the simulation.
 On average stars accrete above 0.01 \msolaryr for less than 100 kyr before accretion is halted
 due to external tidal disruption. \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+   \centering 
+\includegraphics[width=0.525\textwidth]{FIGURES/Sensitivity.pdf}
+\caption{The LISA sensitivity curve with the strain due to two massive black holes each with a mass
+  of 5000 \msolarc. The merger of two 5000~\msolar black holes at $z = 15$ gives a
+  signal to noise ratio of 32 that is visible by LISA. The inspiral will enter the LISA band at
+  approximately $5 \times 10^{-4}$ Hz, corresponding to a time to merger of approximately 1 month.}
+\label{Fig:Sensitivity}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \indent What does this mean for the formation of SMSs and massive black hole seeds? This is only a
 single halo simulated for 2 Myr. However, it is likely that the phenomenon of a
 turbulent environment is common in the early stages of galaxy formation and
