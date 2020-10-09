@@ -132,8 +132,8 @@
 \keywords{Early Universe, Supermassive Stars, Star Formation, First Galaxies, Numerical Methods}
 
 \section{Introduction} \label{Sec:Introduction}
-Supermassive stars (SMSs) with masses between $10^4$ and $10^5$ \msolar have over the past few decades been invoked \citep{Rees_1978, Begelman_1978, Begelman_2006,
-  Begelman_2008, Latif_2016a, Woods_2018} to explain the existence of supermassive black holes (SMBHs) at the centres of massive galaxies \citep{Fan_06, Kormendy_2013}.
+Supermassive stars (SMSs) with masses between $10^4$ and $10^5$ \msolar have, over the past few decades, been invoked \citep{Rees_1978, Begelman_1978, Begelman_2006,
+  Begelman_2008, Latif_2016a, Woods_2018} \textbf{as an intermediate phase} to explain the existence of supermassive black holes (SMBHs) at the centres of massive galaxies \citep{Fan_06, Kormendy_2013}.
 The pathways to forming a SMBH are thus far unknown with a number of theoretical models proposing to explain their existence. \\
 \indent Perhaps the
 simplest explanation is to invoke the black holes left over from the first 
@@ -155,7 +155,7 @@ its surface temperature to approximately 5000 K
 and making the star resemble a red giant star
 \citep{Omukai_2003, Hosokawa_2012, Hosokawa_2013, Woods_2017}. However, the SMS must continue to
 accrete above this threshold rate. If the accretion rate falls below the critical
-rate the star contracts to the main sequence and becomes a hyper-luminous PopIII
+rate for a time exceeding the Kelvin-Helmholtz time \citep{Sakurai_2016} the star contracts to the main sequence and becomes a hyper-luminous PopIII
 star with a mass set approximately by the mass at which the accretion rate dropped.
 When the accretion rate is maintained the star grows rapidly but emits
 only weak radiative feedback with the spectrum of the emitted radiation peaking below
@@ -243,8 +243,7 @@ resolution. Given that the regions focus on different
  investigated the occurrence of metal-free and star-free atomic cooling haloes across all of the
  Renaissance datasets. We found a total of 79 such haloes in the
  \rarepeak outputs and three such haloes in the \normal outputs. None were found in the \void outputs.
- Of the 79 haloes which were metal-free and star free above the atomic cooling limit some
- showed almost ideal isothermal collapse consistent with what has previously been identified
+ Of the 79 haloes which were metal-free and star free above the atomic cooling limit \textbf{four haloes showed almost ideal isothermal collapse (see Figure 6. in \cite{Regan_2020})} consistent with what has previously been identified
  as ideal conditions for forming SMSs \citep{Inayoshi_2014, Becerra_2015, Latif_2016a,
    Regan_2017, Chon_2017b, Regan_2018b}. Of those haloes which collapsed isothermally we then
  selected two haloes for re-simulation in this study. \\
@@ -445,7 +444,7 @@ diffusive solver at the expense of accuracy, but instead
 we neglect the impact of ionising feedback and post-process the impact of
 ionising feedback with \cloudy and use the results to estimate the extent to which the stars
 (particularly the hyper luminous stars in \hac) ionise their surroundings and potentially shutdown
-further star formation.
+further star formation\footnote{Initally our simulation plan had been to run four haloes with and without a background LW field at a refinement level of 24 (16 times higher than we report here). However, the simulations proved intractable and computational expensive and hence we reduced the scope of the campaign. We are now in the process of undertaking a new more expansive campaign.}.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%Visualisations of haloes at start and end %%%%%%%%%%%%%%%%%
