@@ -155,7 +155,7 @@ its surface temperature to approximately 5000 K
 and making the star resemble a red giant star
 \citep{Omukai_2003, Hosokawa_2012, Hosokawa_2013, Woods_2017}. However, the SMS must continue to
 accrete above this threshold rate. If the accretion rate falls below the critical
-rate for a time exceeding the Kelvin-Helmholtz time \citep{Sakurai_2016} the star contracts to the main sequence and becomes a hyper-luminous PopIII
+rate, \textbf{for a time exceeding the Kelvin-Helmholtz time \citep{Sakurai_2016}}, the star contracts to the main sequence and becomes a hyper-luminous PopIII
 star with a mass set approximately by the mass at which the accretion rate dropped.
 When the accretion rate is maintained the star grows rapidly but emits
 only weak radiative feedback with the spectrum of the emitted radiation peaking below
@@ -163,7 +163,7 @@ the hydrogen ionisation limit \citep{Woods_2018}. \\
 \indent As discussed, the key requirement for
 forming a SMS is that the mass accretion rate onto the star exceeds approximately 0.001 \msolaryrc,
 however, a sufficient baryon reservoir is also required and furthermore the metallicity of the gas
-being accreted should be below $10^{-3}$ \zsolar \citep{Chon_2020}. For these reasons
+being accreted should be below $10^{-3}$ \zsolarc. \textbf{Detailed high resolution simulations have found that has enriched above this threshold fragments into lower mass stars which do not converge to a single object and in this case the formation of a SMS is suppresssed \citep[e.g.][]{Chon_2020}}. For these reasons
 metal-poor (i.e., Z $\lesssim 10^{-3}$ \zsolarc) atomic cooling haloes are seen as the most 
 promising candidates in which to form SMSs. Haloes which have higher levels of 
 metal-enrichment (Z $> 10^{-3}$ \zsolarc) may also be viable candidates for 
@@ -194,7 +194,7 @@ the effects of dynamical heating can suppresses star formation below the atomic 
   6000 \msolar but that the accretion rate onto individual proto-stars always declines as the star's
   immediate gas supply is depleted. In the re-simulation of \hbc, without a LW field, we find that
   the halo undergoes premature collapse (compared to the original case where a LW field of
-  \JLW $\sim 2$ J$_{21}$ existed). In \hb the most massive star in the halo has a mass of
+  \JLW $\sim 2$ J$_{21}$\footnote{J$_{21}$\ is shorthand for $1 \times 10^{-21} \ \rm{ erg\ cm^{-2}\ s^{-1}\ Hz^{-1}\ sr^{-1}}$} existed). In \hb the most massive star in the halo has a mass of
   approximately 173 \msolarc. The impact of ionising radiation is not considered in these
   simulations but post-processing of the stellar feedback using \cloudy \citep{Ferland_2017} is
   instead used to gauge the likely impact of ionising sources, particularly for \ha which forms a
@@ -259,8 +259,8 @@ resolution. Given that the regions focus on different
 \centerline{
 \includegraphics[width=0.52\textwidth]{FIGURES/Combined.pdf}
 \includegraphics[width=0.52\textwidth]{FIGURES/MassRedshift.pdf}}
-\caption{\textit{Left Panel:} The LW background rate imposed on Halo A for the re-simulation.
-  \hb is not shown as no LW background is imposed on \hbc. The LW rates are composed of local
+\caption{\textit{Left Panel:} The LW background field imposed on Halo A for the re-simulation.
+  \hb is not shown as no LW background is imposed on \hbc. The LW field values are composed of local
   sources, plus a LW background from \citet{Wise_2012b}, extracted from the original Renaissance
   simulations. The local sources dominate over the background by at least an order of magnitude at
   all times. In the original Renaissance simulations \ha (and \texttt{HaloB})  remained metal-free
@@ -285,8 +285,8 @@ resolution. Given that the regions focus on different
 In order to make the simulation time tractable, we restricted the mesh refinement to be focused
 around the target haloes. In order to do this we first identified the Lagrangian
 volume (setting this to three times the virial radius) of the target halo
-at the redshift at which it was found ($z = 15.6$ for \ha and $z = 15.0$
- for \hbc) and tagged each dark matter particle within this volume. This ensured
+at the redshift at which it was \textbf{first identified as a star-free, atomic cooling halo with zero metallicity ($z = 15.6$, M$_{halo} \sim 7 \times 10^7 $\msolar for \ha and $z = 15.0$,
+M$_{halo} \sim 5 \times 10^7$ \msolar for \hbc)} and tagged each dark matter particle within this volume. This ensured
  that we  captured the dynamics of the gas and dark matter both within and surrounding the halo.
  Upon restarting
  the simulation subsequently at $z = 20$ we then set each of the tagged dark matter particles as
@@ -309,7 +309,7 @@ at the redshift at which it was found ($z = 15.6$ for \ha and $z = 15.0$
  surrounding galaxies is therefore neglected. In order to account for the radiation that would
  otherwise be emitted by these galaxies we extracted the LW emission from the original simulations
  and created a table of LW values that this target halo is exposed to as a function of
- redshift. Using the \grackle \citep{Grackle} software library we then used these LW tables as
+ redshift. \textbf{By doing this the spatial information of the LW field is preserved and so the target haloes feel the same LW radiation as they did in the original simulations where star formation and feedback was followed in every galaxy in the volume}. Using the \grackle \citep{Grackle} software library we then used these LW tables as
  the ``background'' that this halo is exposed to. Self-shielding to LW radiation is also invoked in
  the re-simulations based on the \cite{Wolcott-Green_2011} prescription.\\
  \indent For the re-simulation of \ha the LW radiation background follows exactly the radiation
@@ -454,7 +454,7 @@ further star formation\footnote{Initally our simulation plan had been to run fou
 \centerline{
 \includegraphics[width=0.52\textwidth]{FIGURES/HaloA/Proj_z_number_density_0001.pdf}
 \includegraphics[width=0.52\textwidth]{FIGURES/HaloB/Proj_z_number_density_0028.pdf}}
-\caption{Both panels show the projected number density$^3$ of the region around which the first
+\caption{Both panels show the projected number density$^5$ of the region around which the first
   star forms. \ha is in the left hand panel, \hb in the right hand panel.
   The legend in each panel gives the mass of each star at the first output time following star
   formation as well as the age of each star at that time. The extent of each panel is 2 pc (physical). The orange
@@ -570,7 +570,7 @@ quench further star formation through photoionisation in each halo.
 \centerline{
 \includegraphics[width=0.52\textwidth]{FIGURES/HaloA/Proj_z_number_density_2001.pdf}
 \includegraphics[width=0.52\textwidth]{FIGURES/HaloB/Proj_z_number_density_1844.pdf}}
-\caption{Both panels show the projected number density$^3$ in each halo at the end of each
+\caption{Both panels show the projected number density$^5$ in each halo at the end of each
   simulation. The left panel shows \ha while the right panel shows \hbc.
   The legend in each figure gives the mass of the five most massive stars at the final output
   time, as well as
@@ -898,8 +898,9 @@ is present in these simulations. Instead mass accretion is terminated as the sta
 initial velocity is much smaller than the circular
 velocity of the host halo it does cause the stars to move around and decouple from the high density gas cloud in which they initially formed. \\
 \indent By the end of each simulation the total stellar mass in \ha is 90,000 \msolar and 1300
-\msolar in \hbc. The star formation efficiency in the inner 20 pc (5 pc) of \ha (\hbc) is 28\%
-(18\%). 20 pc is the approximate Jeans length of the gas in \ha while 5 pc is the approximate Jeans
+\msolar in \hbc. The star formation efficiency in the inner 20 pc (5 pc) of \ha (\hbc) is $\sim$ 23\%
+($\sim 2$\%). \textbf{The stellar to dark matter ratios are higher in each case since this 
+inner regime is baryon dominated}. 20 pc is the approximate Jeans length of the gas in \ha while 5 pc is the approximate Jeans
 length of the gas in \hbc. In order for the formation of a truly supermassive star in \ha all of the
 stellar mass
 (i.e. $\sim$90,000 \msolarc) would have needed to have been accreted onto the stellar surface. Instead
@@ -954,15 +955,16 @@ at all radii indicating that collisions are very unlikely for the stars in \hac.
 t$_{\rm{relax}}$, is approximately 10 Myr at 1 pc. However, this time exceeds the lifetime of the
 stars in our cluster and contraction to very high densities appears unlikely and hence the
 runaway collapse of the cluster is not predicted (or observed here). \\
-\indent This result is backed up by more recent investigations of black hole merging in similar
-environments as we now discuss. 
+\indent 
+%This result is backed up by more recent investigations of black hole merging in similar
+%environments as we now discuss. 
 At the end of the simulation \ha has 22 stars with masses greater than 1000 \msolar with
-the most massive star having a mass of 6127 \msolarc. The simulations show that accretion onto
-the stars is
-focused on the early stages in the life of the star with most of the mass accreted within the
-first 100 kyr. Therefore, if we assume that the proto-galaxy gets populated with a plethora of
-weakly accreting black holes early in the proto-galactic evolution then it is reasonable to ask \textit{what are the prospects for the merger of this first generation
-  of black holes into a population of more massive black holes?}\\
+the most massive star having a mass of 6127 \msolarc. \textbf{Within the central 1 pc of the 
+halo centre there is a total (stellar + gas) mass of $\sim 2 \times 10^4$ \msolarc. This puts \ha at the lower end of what defines a Nuclear Star Cluster (NSC) \citep[e.g.][]{Georgiev_2016}. However, subsequent, further rapid growth of this halo beyond this initial phase of star formation will drive the enclosed mass further upwards. This would have the effect of pushing the environment to a point where the central region of a galaxy becomes a proto-NSC. At this stage if the density of the core reaches a point where the enclosed total baryonic mass within the central parsec reaches approximately $10^6$ \msolar then core collapse can occur \citep{Davies_2011} potentially reaching a central black hole mass of M$_{BH} \sim 10^5$ \msolarc. Depending on the densities reached core collapse could occur on timescales of a few hundred Myr \citep{Davies_2011} although equally the NSC 
+could act as an incubator for the rapid growth of a seed black hole through gas accretion achieveing
+similar masses over a potentially longer timescale \citep{Natarajan_2020}}. Our specific case here shows that we will have a  proto-galaxy that gets populated with a plethora of
+weakly accreting black holes early in the proto-galactic evolution. It is therefore reasonable to ask \textit{what are the prospects for the merger of this first generation
+  of black holes into a population of more massive black holes?}. 
 \indent \cite{Pfister_2019} investigated the merging of black holes in high resolution
 simulations ($\Delta x \sim 10$ pc) with black hole masses in the range
 $10^4$ \msolar to $10^5$ \msolar in high-z galaxies. They found that dynamical friction from stars
