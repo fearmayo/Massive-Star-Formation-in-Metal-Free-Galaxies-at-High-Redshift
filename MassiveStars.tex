@@ -731,7 +731,8 @@ able to ionise
 its immediate surroundings. However, after this point, with the most massive star more centrally
 located, recombinations dominate. When considering the larger 5 pc radius (dashed blue line)
 ionisation becomes much more difficult. In the left hand panel we see that the 5 pc region
-is approximately 40\% ionised by 2000 kyr but if we look at the right hand panel we see that recombinations are still overwhelmingly dominant. This is because \ha contains a plethora of dense knots and
+is approximately 40\% ionised by 2000 kyr but if we look at the right hand panel we see that
+recombinations are still overwhelmingly dominant. This is because \ha contains a plethora of dense knots and
 filaments in which recombinations are dominant and into which ionising photons cannot penetrate. \\
 \indent For \hb both measures, at 1 pc,  show a fully ionised medium
 after approximately 1000 kyr. The most massive star has a mass of 173 \msolar and crucially
@@ -748,7 +749,11 @@ the case of \ha this is particularly important. \ha contains a number of hyper-l
 however, the much denser gas in the central region of \ha is robust against stellar feedback
 allowing star formation to proceed in these dense pockets, 
 albeit with the overall volume ionisation growing in importance as the simulation progresses
-(see left panel of Figure \ref{Fig:Ionisation}).
+(see left panel of Figure \ref{Fig:Ionisation}). \textbf{The results from our \cloudy models have
+  very recently been confirmed by the 1-D analysis of \cite{Sakurai_2020} who investigated the
+impact of ionising feedback from a growing protostar in a very similar environment. They found,
+similar to us, that no significant HII region forms during the evolution of the star. }
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 6%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Radial Profiles prior to formation
@@ -787,29 +792,44 @@ albeit with the overall volume ionisation growing in importance as the simulatio
 \begin{minipage}{175mm}      \begin{center}
     \centerline{
       \includegraphics[width=9.0cm, height=6cm]{FIGURES/AccretionRate_HaloA.pdf}
-      \includegraphics[width=9.0cm, height=6cm]{FIGURES/MassAccretionRate_MultipleHaloes.pdf}}
+      \includegraphics[width=9.0cm, height=6cm]{FIGURES/Mass_HaloA.pdf}}
     \caption{
-      \textit{Left Panel:} The mass evolution of the most massive star in each simulation. The
-      solid blue line is for the most massive star in \texttt{HaloA}. It has a mass of
-      6127 \msolar after 143 kyr. The solid red line is for the most massive star in \texttt{HaloB}.
-      It has a mass of 173 \msolar after 1784 kyr of evolution. We also look at the mass evolution
-      of an average star in each simulation for comparison. In \ha a median$^4$ star has a mass of 683
-      \msolarc, this is shown by the dashed blue line. In \hb on the other hand a median star has a
-      mass of 43 \msolar and is shown by the dashed red line. 
-      \textit{Right Panel:} The accretion rate onto the most massive star for both \ha and \hb
-      (solid lines), dashed lines give the accretion rate onto the median mass star for both \ha
-      and \hbc. In both cases initial accretion rates begin to decline rapidly after less than
-      20 kyr and do not recover. The sharp spike for \hb after approximately 200 kyr is the merger
-      of the star with another star. The black dashed line gives the critical rate for SMS
-      star formation
-      \citep{Haemmerle_2017}.
+      \textit{Left Panel:} The accretion rate onto all stars in \hac. The mass accretion onto the
+      most massive star is shown by the blue line. The dashed blue line gives the accretion
+      rate onto the median mass star in \hac. Accretion onto all others stars are shown as grey lines.
+      In all cases initial accretion rates decline over time, dropping below the critical rate
+      for SMS formation after, on average, 100 kyr. The black dashed line gives the critical rate for SMS
+      star formation \citep{Haemmerle_2017}.
+      \textit{Right Panel:}  The mass evolution of every star \hac. The
+      solid blue line is for the most massive star in \hac. It has a mass of
+      6127 \msolar after 143 kyr. We also look at the mass evolution
+      of an average star in \ha for comparison - given by the dashed blue line.
+      In \ha a median$^4$ star has a mass of 683 \msolarc.
     }
-\label{Fig:AccretionRates}
+\label{Fig:HaloA_AccretionRates}
 \end{center} \end{minipage}
 \end{figure*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 8%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Accretion Rates and Masses for all haloes. Most massive and median
+
+\begin{figure*}
+\centering
+\begin{minipage}{175mm}      \begin{center}
+    \centerline{
+      \includegraphics[width=9.0cm, height=6cm]{FIGURES/AccretionRate_HaloB.pdf}
+      \includegraphics[width=9.0cm, height=6cm]{FIGURES/Mass_HaloB.pdf}}
+    \caption{
+      The same as Figure \ref{Fig:HaloA_AccretionRates} except this time for the
+      evolution of stars in \hbc. The most massive star in \hb has a mass of 173 \msolar. 
+    }
+\label{Fig:HaloB_AccretionRates}
+\end{center} \end{minipage}
+\end{figure*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection{The onset and end of star formation}
@@ -856,14 +876,17 @@ of either halo and we are likely missing some lower mass stars.
 
 \subsection{The case for super-massive star formation}
 In Figure \ref{Fig:ProjectionEnd} we saw that the mass of the most massive star in \ha was
-6127 \msolarc. While this mass is well beyond the mass of ordinary PopIII stars \citep{Turk_2009, Greif_2011, Wise_2012b, Crosby_2013, Susa_2014, Hirano_2014, Stacy_2016} and also more than 30 times
+6127 \msolarc. While this mass is well beyond the mass of ordinary PopIII stars
+\citep{Turk_2009, Greif_2011, Wise_2012b, Crosby_2013, Susa_2014, Hirano_2014, Stacy_2016} and also more than 30 times
 larger than the most massive star in \hb it is still well short of the mass often associated with
 truly super-massive stars \citep[e.g.][]{Woods_2018} which are expected to have
 end stage masses of $\sim 10^5$ \msolarc. Furthermore, \ha was chosen here to present near ideal
 initial conditions in which to form a supermassive star.
 To illustrate this point we show radial profiles of the halo properties of both \ha and \hb in
-Figure \ref{Fig:RadialProfiles}. Figure \ref{Fig:RadialProfiles} shows the state of the gas in each halo immediately prior to star formation. \ha is denoted by the blue line, \hb by the red line.
-The temperature, \molH fraction, enclosed gas mass and mass inflow rate are shown in clockwise order starting from the bottom left panel. \\
+Figure \ref{Fig:RadialProfiles}. Figure \ref{Fig:RadialProfiles} shows the state of the gas
+in each halo immediately prior to star formation. \ha is denoted by the blue line, \hb by the red line.
+The temperature, \molH fraction, enclosed gas mass and mass inflow rate are shown in
+clockwise order starting from the bottom left panel. \\
 \indent \ha shows near isothermal collapse, although the gas does
 show some degree of cooling at approximately 10 pc. The \molH fraction is very different between
 the two haloes, with \ha showing a steep decline in \molH towards the centre due to the combination
@@ -874,44 +897,91 @@ inside the atomic cooling mass range. In the bottom right hand panel we see the 
 each halo. \ha shows mass infall rates averaging greater than 0.1 \msolaryr all the way into the
 centre of the halo. \hbc's mass infall rates on the other hand fall from approximately
 0.1 \msolaryr at 1 pc down to approximately $10^{-3}$ \msolaryr in the very centre. As we will see
-this result is reflected in the accretion rates observed onto the protostars. \\
+this result is reflected in the \textbf{initial} accretion rates observed onto the protostars. \\
 \indent In order to understand why, given apparent high mass infall rates that are greater than the
 critical rate, a SMS does not form we need to examine the accretion rate that is measured onto the
-stars within the simulation itself. In Figure \ref{Fig:AccretionRates} we show the mass evolution and
-the accretion rate onto the most massive star in each halo. In the left panel we show the mass
-evolution as a function of the stellar age. The most massive star in \ha is denoted by the blue line,
-the most massive star in \hb by the red line. The dashed line in the panel shows the mass evolution
+stars within each simulation itself. \textbf{In Figure \ref{Fig:HaloA_AccretionRates} we show the mass evolution and
+the accretion rate onto every star in \hac, the most massive star in \ha is coloured in blue.
+In the left panel we show the mass accretion rate while in the right hand panel we show the mass evolution.
+In each case we plot as a function of the stellar age. The dashed line in the panel shows the mass evolution
 of a star with the median\footnote{We define a
         median star here as the star at the end of the simulation which has a final mass
-        closest to the median stellar mass at the end} stellar mass in the simulation. The most massive star in \ha is formed
+        closest to the median stellar mass at the end} stellar mass in the simulation.
+The most massive star in \ha is formed
 when two gas clouds within the central region merge and trigger star formation. The star quickly
-grows in mass up to its final mass of 6127 \msolar within approximately 20 kyr after which
-it stops growing. The mass evolution of the most massive star in
-\hb is a little different. In this case the star accretes slower at approximately $10^{-3}$
-\msolaryr (see right panel). What then drives the star to increase its mass is a stellar merger
-with another star. This occurs when the main progenitor star is approximately 200 kyr old and
-results in a star of 173 \msolarc.\\
-\indent In the right hand panel of Figure \ref{Fig:AccretionRates} we see the accretion rates onto
-the most massive star and onto the median star for each simulation. Initially each star follows approximately the mass accretion rate as found in the radial profiles (see Figure \ref{Fig:RadialProfiles}).
-However, in both cases after a few tens of kyr the accretion rate onto each star drops dramatically and mass growth is halted. This drop in accretion is not due to feedback since no ionising feedback
-is present in these simulations. Instead mass accretion is terminated as the star accretes all the gas in its surroundings and moves into a less dense region of the inner halo. All of the stars formed have a small initial velocity of a few \kms, which it takes from the gas that initially formed the star. While this 
+grows in mass up to its final mass of 6127 \msolar within approximately 20 kyr, after which
+its accretion rate declines. The shaded grey lines are the evolutionary tracks for each of the
+other 100 stars in \hac. The trend is similar for every other star.\\} 
+\indent Initially each star follows approximately the mass accretion rate as found in the radial profiles (see Figure \ref{Fig:RadialProfiles}).
+However, in every case after a few tens of kyr the accretion rate onto each star drops dramatically and mass growth is halted.
+This drop in accretion is not due to feedback since no ionising feedback
+is present in these simulations. Instead mass accretion is terminated as the star accretes all the gas in
+its surroundings and moves into a less dense region of the inner halo. All of the stars formed have a small initial velocity of a few \kms,
+which it takes from the gas that initially formed the star. While this 
 initial velocity is much smaller than the circular
 velocity of the host halo it does cause the stars to move around and decouple from the high density gas cloud in which they initially formed. \\
-\indent By the end of each simulation the total stellar mass in \ha is 90,000 \msolar and 1300
-\msolar in \hbc. The star formation efficiency in the inner 20 pc (5 pc) of \ha (\hbc) is $\sim$ 23\%
-($\sim 2$\%). \textbf{The stellar to dark matter ratios are higher in each case since this 
-inner regime is baryon dominated}. 20 pc is the approximate Jeans length of the gas in \ha while 5 pc is the approximate Jeans
+\indent \textbf{In Figure \ref{Fig:HaloB_AccretionRates} we show the mass evolution and accretion rate onto each star in \hbc.
+  Again in the left panel we show the mass accretion rate while in the right hand panel we show the mass evolution.
+  The mass evolution of the most massive star (coloured in blue) in \hb is a little different. In this case accretion is somewhat lessened
+  at approximately $10^{-3}$ \msolaryr (left panel). The most
+  massive star in \hb results from a stellar merger which then drives the star to increase its mass suddenly. This occurs
+  when the main progenitor star is approximately 200 kyr old and results in a star of 173 \msolarc. However, the general
+trends are similar with initial accretion rates always declining as stars move into less dense environments}\\
+
+\subsection{Stellar Multiplicity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 9%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+   \centering 
+\includegraphics[width=0.5\textwidth]{FIGURES/EnclosedMass.pdf}
+\caption{The enclosed gas mass (blue line), enclosed stellar mass (orange line) and the number of
+stars (dashed black line) as a function of radius. The radial profile is centred on the centre
+of mass of stars in the simulation. The profile is created from the final dataset of \hac.
+The stars are concentrated in the central 20 pc of the simulation with a total stellar mass of
+approximately 90,000 \msolar. The baryonic mass at 1 pc is approximately $3 \times 10^4$ \msolar
+rising to approximately $6 \times 10^5$ \msolar at 20 pc. }
+\label{Fig:EnclosedMass}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent \textbf{In Figure \ref{Fig:EnclosedMass} we plot the enclosed gas and stellar mass of \ha as a function of radius.
+The radial profiles are centred on the centre of mass of the stars in the halo. We also show the
+number of stars in each radial bin up to the number of stars in the halo (101). All of the stars
+are concentrated in a radius of 20 pc of the halo centre. By the end of the simulation the total stellar mass
+in \ha is 90,000 \msolar (cf. 1300
+\msolar in \hbc). The star formation efficiency in the inner 20 pc (5 pc) of \ha (\hbc) is $\sim$ 23\%
+($\sim 2$\%). The stellar to dark matter ratios are higher in each case since this 
+inner regime is baryon dominated. 20 pc is the approximate Jeans length of the gas in \ha while 5 pc is the approximate Jeans
 length of the gas in \hbc. In order for the formation of a truly supermassive star in \ha all of the
 stellar mass
 (i.e. $\sim$90,000 \msolarc) would have needed to have been accreted onto the stellar surface. Instead
 what happened was that the outer gas cloud in \ha fragmented into a small number of sub-clouds which
 each generated hotspots of star formation. These sub-clouds tidally disrupt each other during the
 subsequent evolution both triggering further star formation but also tidally disrupting accretion.
-From a total baryonic reservoir of approximately 300,000 \msolar inside 20 pc, approximately 2\% of the baryons went into the most massive star. To form a SMS
-with a mass of close to 100,000 \msolar we would need a third of the mass to 
+From a total baryonic reservoir of approximately 600,000 \msolar inside 20 pc, approximately 1\% of the baryons went
+into the most massive star. To form a SMS
+with a mass of close to 100,000 \msolar we would need over a fifth of the mass to 
 flow into a single object. While this is possible it is clearly going to be 
-very challenging given the turbulent nature of the environment in which these stars are forming.
-What appears more likely, for this halo at least, is that the 
+very challenging given the turbulent nature of the environment in which these stars are forming. \\
+\indent The stars in the central 20 pc region of \ha wander the inner parts of the halo in a random walk fashion. As
+stars cross regions (filaments) of high density they can experience enhanced accretion rates. In Figure
+\ref{Fig:Clumps} we show the environmental changes which occur for eight stars within \hac. The stars were
+chosen because at some point in their evolution they undergo a second period of high accretion
+($\dot{M} > 5 \times 10^{-3}$ \msolaryrc) at least 100 kyr after their formation.
+The most massive star in the simulation is coloured in blue, the
+other stars are coloured in orange and not distingished. Note that each of the orange stars undergoes
+a ``bump'' in it's accretion rate independent of the initial high accretion rate value (top left panel
+of Figure \ref{Fig:Clumps}). The high accretion rate is directly correlated with the star passing through a
+region of high density which is shown in the top right panel. The relative velocities of each of the stars
+are shown in the bottom right panel while the distance from each star to the nearest high density clump is
+shown in the bottom left panel. Average relative velocities are below 10 \kms with some spikes showing
+velocities between 10 and 20 \kms. A high density clump is defined as any cell that has a density more than
+10\% of the  Jeans Density. The distance of a star from a high density clump is highly variable with stars
+spending the majority of their time at least 2 or 3 pc away from a high density clump. However, encounters
+with filaments and clumps do occur and this drives the distance to zero with an associated spike in
+the accretion rate (and density) around the star. However, what is also clear is that periods of high accretion
+are fleeting, lasting only a few kyr at most. Apart from these short periods of rapid growth the initial mass of the
+stars does not increase appreciably and a consistently high accretion rate is not maintained. This is similar is
+spirit to what \cite{Smith_2018} found for accretion stellar mass black holes in similar high-z enviroments.}\\
+\indent What appears more likely, for this halo at least, is that the 
 most massive star(s) in the halo will form of population of intermediate mass black holes
 (IMBHs) with masses ranging from 300 \msolar to several thousand \msolarc.
 The subsequent
@@ -925,6 +995,18 @@ This conclusion is unlikely to be due to insufficient resolution: it is
 well-known that low resolution damps turbulent motion very significantly
 \citep[e.g.][]{Federrath_2010a, Downes_2012}. Thus insufficient resolution
 will lead to an {\it over-estimate} of the likelihood of forming an SMS.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 11%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+\centering
+\begin{minipage}{175mm}      \begin{center}
+\centerline{
+    \includegraphics[width=18.0cm, height=12cm]{FIGURES/MultiplicityPlots.pdf}}
+\caption{ }
+\label{Fig:Clumps}
+\end{center} \end{minipage}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Intermediate Mass Black Hole Merging and Implications for Gravitational Wave detection} \label{Sec:GW}
 We begin this section by analysing the stellar content of \ha and in particular the likelihood
@@ -960,8 +1042,18 @@ runaway collapse of the cluster is not predicted (or observed here). \\
 %environments as we now discuss. 
 At the end of the simulation \ha has 22 stars with masses greater than 1000 \msolar with
 the most massive star having a mass of 6127 \msolarc. \textbf{Within the central 1 pc of the 
-halo centre there is a total (stellar + gas) mass of $\sim 2 \times 10^4$ \msolarc. This puts \ha at the lower end of what defines a Nuclear Star Cluster (NSC) \citep[e.g.][]{Georgiev_2016}. However, subsequent, further rapid growth of this halo beyond this initial phase of star formation will drive the enclosed mass further upwards. This would have the effect of pushing the environment to a point where the central region of a galaxy becomes a proto-NSC. At this stage if the density of the core reaches a point where the enclosed total baryonic mass within the central parsec reaches approximately $10^6$ \msolar then core collapse can occur \citep{Davies_2011} potentially reaching a central black hole mass of M$_{BH} \sim 10^5$ \msolarc. Depending on the densities reached core collapse could occur on timescales of a few hundred Myr \citep{Davies_2011} although equally the NSC 
-could act as an incubator for the rapid growth of a seed black hole through gas accretion achieveing
+  halo centre there is a total (stellar + gas) mass of $\sim 3 \times 10^4$ \msolarc.
+  This puts \ha at the lower end of what defines a Nuclear Star Cluster (NSC) \citep[e.g.][]{Georgiev_2016}.
+  However, subsequent, further rapid growth of this halo beyond this initial phase of star formation
+  will drive the enclosed mass further upwards. This would have the effect of pushing the environment
+  to a point where the central region of a galaxy becomes a proto-NSC. At this stage if the density
+  of the core reaches a point where the enclosed total baryonic mass within the central parsec
+  reaches approximately $10^6$ \msolar then core collapse can occur \citep{Davies_2011}
+  potentially reaching a central black hole mass of M$_{BH} \sim 10^5$ \msolarc. Depending on the
+  densities reached core collapse could occur on timescales of a few hundred Myr
+  \citep{Davies_2011} although equally the NSC 
+  could act as an incubator for the rapid growth of a seed black hole
+  through gas accretion achieveing
 similar masses over a potentially longer timescale \citep{Natarajan_2020}}. \\
 \indent Our specific case here shows that we will have a  proto-galaxy that gets populated with a plethora of
 weakly accreting black holes early in the proto-galactic evolution. It is therefore reasonable to ask \textit{what are the prospects for the merger of this first generation
@@ -1026,7 +1118,7 @@ discoverable by LISA significantly. This point was previously investigated by
 \cite{Hartwig_2018} as a method to discriminate between seed formation scenarios. Further,
 investigation of the number density of in-situ mergers and how they could influence the number
 of detections by LISA is now underway (Arridge et al. in prep).
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 7%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 10%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
    \centering 
 \includegraphics[width=0.5\textwidth]{FIGURES/CollisionalTime.pdf}
@@ -1096,8 +1188,9 @@ more massive galaxies as well. \cite{Chon_2016} and \cite{Chon_2017b} investigat
 where, like here, they selected massive haloes from a larger scale parent simulation. Using
 particle splitting techniques they preformed two very high resolution zoom-in simulations for
 approximately 100 kyr each. In one case they found that the central disk fragmented into approximately
-15 stars with masses of a few$\times 10^3$ \msolar - similar to what we find here. In the
-other case they found much less fragmentation leading to an almost spherical collapse and the
+15 stars with masses of a few$\times 10^3$ \msolar - similar to what we find here
+\textbf{and indeed what was found in the more idealised simulation of \cite{Regan_2018b} where an external LW field was used to suppress PopIII star formation.} In the
+other case from \cite{Chon_2017b} they found much less fragmentation leading to an almost spherical collapse and the
 formation of a handful of stars with masses in the range of a few $\times 10^4$ \msolarc.
 They concluded that the tidal field surrounding the collapsing haloes in both cases played a major
 role. Given that \ha in this study experiences a sharp rise in its impinging LW field from a
