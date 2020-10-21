@@ -823,7 +823,7 @@ similar to us, that no significant HII region forms during the evolution of the 
       \includegraphics[width=9.0cm, height=6cm]{FIGURES/Mass_HaloB.pdf}}
     \caption{
       The same as Figure \ref{Fig:HaloA_AccretionRates} except this time for the
-      evolution of stars in \hbc. The most massive star in \hb has a mass of 173 \msolar. 
+      evolution of stars in \hbc. The most massive star in \hb has a mass of 173 \msolarc. 
     }
 \label{Fig:HaloB_AccretionRates}
 \end{center} \end{minipage}
@@ -963,25 +963,26 @@ flow into a single object. While this is possible it is clearly going to be
 very challenging given the turbulent nature of the environment in which these stars are forming. \\
 \indent The stars in the central 20 pc region of \ha wander the inner parts of the halo in a random walk fashion. As
 stars cross regions (filaments) of high density they can experience enhanced accretion rates. In Figure
-\ref{Fig:Clumps} we show the environmental changes which occur for eight stars within \hac. The stars were
+\ref{Fig:Clumps} we show the environmental changes which occur for five stars within \hac. The stars were
 chosen because at some point in their evolution they undergo a second period of high accretion
 ($\dot{M} > 5 \times 10^{-3}$ \msolaryrc) at least 100 kyr after their formation.
-The most massive star in the simulation is coloured in blue, the
-other stars are coloured in orange and not distinguished. Note that each of the \jhw{Did orange refer to an old version of the plot?} orange stars undergoes
-a ``bump'' in its accretion rate independent of the initial high accretion rate value (top left panel
-of Figure \ref{Fig:Clumps}). The high accretion rate is directly correlated with the star passing through a
-region of high density which is shown in the top right panel. The relative velocities of each of the stars
+The most massive star in the simulation is coloured in green. Periods of high accretion ($\dot{M} > 1 \times 10^{-3}$ \msolaryrc)
+are identified by a circular marker with an embedded black dot. 
+Note that each of the stars undergoes a ``bump'' in its accretion rate independent of the initial high accretion
+rate value (top left panel of Figure \ref{Fig:Clumps}). The high accretion rate is directly correlated with the star
+passing through a region of high density which is shown in the top right panel. The relative velocities of each of the stars
 are shown in the bottom right panel while the distance from each star to the nearest high density clump is
 shown in the bottom left panel. Average relative velocities are below 10 \kms{} with some spikes showing
 velocities between 10 and 20 \kms. A high density clump is defined as any cell that has a density more than
 10\% of the  Jeans Density. The distance of a star from a high density clump is highly variable with stars
-spending the majority of their time at least 2 or 3 pc away from a high density clump. However, encounters
-with filaments and clumps do occur and this drives the distance to zero with an associated spike in
-the accretion rate (and density) around the star. However, what is also clear is that periods of high accretion
-are fleeting, lasting only a few kyr at most. Apart from these short periods of rapid growth the initial mass of the
+encountering a high density clump (D = 0 pc) only occasionally. Encounters
+with filaments and clumps do occur however with an associated spike in
+the accretion rate (and density) around the star (indentifed by a circular marker with an embedded black dot).
+What is also clear is that periods of high accretion are fleeting, lasting only a few kyr at most. Apart from these
+short periods of rapid growth the initial mass of the
 stars does not increase appreciably and a consistently high accretion rate is not maintained. This is similar is
-spirit to what \cite{Smith_2018} found for accretion stellar mass black holes in similar high-z environments.}\\
-\indent What appears more likely, for this halo at least, is that the 
+spirit to what \cite{Smith_2018} found for accreting stellar mass black holes in similar high-z environments.}\\
+\indent What appears likely, for this halo at least, is that the 
 most massive star(s) in the halo will form of population of intermediate mass black holes
 (IMBHs) with masses ranging from 300 \msolar to several thousand \msolarc.
 The subsequent
@@ -1001,20 +1002,24 @@ will lead to an {\it over-estimate} of the likelihood of forming an SMS.
 \centering
 \begin{minipage}{175mm}      \begin{center}
 \centerline{
-    \includegraphics[width=18.0cm, height=12cm]{FIGURES/MultiplicityPlots.pdf}}
-\caption{\jhw{Choose different colors, especially the yellow. The default matplotlib ones are fine.} The evolution of the most massive star in \ha and seven other stars which
+    \includegraphics[width=18.0cm, height=12cm]{FIGURES/MultiplicityPlotsReader.pdf}}
+\caption{The evolution of the most massive star in \ha and four other stars which
   cross regions of high density during their evolution resulting in enhanced accretion rates.
-  The accretion rate for each star (most massive in blue) is shown in the
-  top left panel. The final mass of each star ranges from approximately 1000 \msolar up to 6127
+  The accretion rate for each star (most massive in green) is shown in the
+  top left panel. The final mass of each star ranges from approximately 1135 \msolar up to 6127
   \msolarc. Each of the stars (with the exception of the most massive star) shows a second
-  spike of $\dot{M} \gtrsim 10^-3$ \msolaryr during its evolution. For most stars this
+  spike of $\dot{M} \gtrsim 10^-3$ \msolaryr during its evolution. These times of high accretion
+  are highlighted using cicular markers with embedded black dots. For most stars this
   happens a few hundred kyr after formation. This spike in accretion is caused by the star
   crossing a region of high density.
   The gas number density surrounding each star is shown in the top right panel. The
   relative velocity of the stars (which also impacts accretion) is shown in the bottom
-  right panel. Finally, in the bottom left panel we plot the distance from each star to the
-  nearest high density clump. As stars cross the inner halo their distances from a high density
-  clump varies. Note that for the most massive star, shown in blue, the stellar
+  right panel. Note that the relative velocity values can be as high as 10 - 15 \kms
+  during a high accretion event as the star can be crossing through a dense clump.
+  Finally, in the bottom left panel we plot the distance from each star to the
+  nearest high density clump. Times of high accretion always corresponds to a distance
+  of 0 pc from a clump. However, as stars cross the inner halo their distances from a high density
+  clump varies in general. Note that for the most massive star, shown in green, the stellar
   age is quite short as this star formed near the end of the simulation.}
 \label{Fig:Clumps}
 \end{center} \end{minipage}
