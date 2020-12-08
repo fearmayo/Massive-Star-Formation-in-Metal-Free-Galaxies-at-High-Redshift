@@ -361,9 +361,13 @@ density of the cells intersecting the surface, $v_r^-$ is the velocity of cells 
 the surface which have negative radial velocities and $r$ is the radius of our surface. As noted above we
 set the accretion radius to be 4 cells. The accretion onto the star is calculated at each timestep,
 however this is likely to be a very noisy metric. To alleviate this to some degree we average
-the accretion rate over intervals of 1 kyr and use that averaged accretion rate in data outputs. The accretion rate is added as an attribute to each star and hence a full
+the accretion rate over intervals of 1 kyr and use that averaged accretion rate in data outputs.
+The accretion rate is added as an attribute to each star and hence a full
 accretion history of every star is outputted as part of every snapshot. Mergers with other stars
-are also included in the accretion onto the stars. In this case the more massive star retains its
+are also included in the accretion onto the stars. \textbf{Simulations of massive star formation
+\citep[e.g.][]{Meyer_2020} do show that stellar mergers do increase the “bloatedness” of a star
+and hence including the mergers in the accretion rates is likely to be valid.}
+In this case the more massive star retains its
 information (e.g., age, type, etc.) after the merger event - information on the less massive star is
 lost. The mass of the less massive star is added to the accretion rate of the more massive star for
 that timestep. Stars are merged when they come within 3 times the accretion radius of each other (i.e. 12 cell lengths).
@@ -914,7 +918,7 @@ rising to approximately $6 \times 10^5$ \msolar at 20 pc. }
   top left panel. The final mass of each star ranges from approximately 1135 \msolar up to 6127
   \msolarc. Each of the stars (with the exception of the most massive star) shows a second
   spike of $\dot{M} \gtrsim 10^-3$ \msolaryr during its evolution. These times of high accretion
-  are highlighted using cicular markers with embedded black dots. For most stars this
+  are highlighted using circular markers with embedded black dots. For most stars this
   happens a few hundred kyr after formation. This spike in accretion is caused by the star
   crossing a region of high density.
   The gas number density surrounding each star is shown in the top right panel. The
@@ -1085,17 +1089,6 @@ t$_{\rm{relax}}$, is approximately 10 Myr at 1 pc. However, this time exceeds th
 stars in our cluster and contraction to very high densities appears unlikely and hence the
 runaway collapse of the cluster is not predicted (or observed here). \\
 \indent
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-   \centering 
-\includegraphics[width=0.525\textwidth]{FIGURES/Sensitivity.pdf}
-\caption{The LISA sensitivity curve with the strain due to two massive black holes each with a mass
-  of 5000 \msolarc. The merger of two 5000~\msolar black holes at $z = 15$ gives a
-  signal to noise ratio of 32 that is visible by LISA. The inspiral will enter the LISA band at
-  approximately $5 \times 10^{-4}$ Hz, corresponding to a time to merger of approximately 2 months.}
-\label{Fig:Sensitivity}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %This result is backed up by more recent investigations of black hole merging in similar
 %environments as we now discuss. 
 At the end of the simulation \ha has 22 stars with masses greater than 1000 \msolar with
@@ -1114,7 +1107,8 @@ the most massive star having a mass of 6127 \msolarc. Within the central 1 pc of
   through gas accretion achieving
 similar masses over a potentially longer timescale \citep{Natarajan_2020}. \\
 \indent Our specific case here shows that we will have a  proto-galaxy that gets populated with a plethora of
-weakly accreting black holes early in the proto-galactic evolution. It is therefore reasonable to ask \textit{what are the prospects for the merger of this first generation
+weakly accreting black holes early in the proto-galactic evolution.
+It is therefore reasonable to ask \textit{what are the prospects for the merger of this first generation
   of black holes into a population of more massive black holes?}. \\
 \indent \cite{Pfister_2019} investigated the merging of black holes in high resolution
 simulations ($\Delta x \sim 10$ pc) with black hole masses in the range
@@ -1148,19 +1142,23 @@ the case where the black hole does not encounter sufficiently dense gas then the
 may wander the central region of the galaxy for many dynamical times. The galactic centres
 in which our massive PopIII
 stars form (especially \hac) contain a web of dense gaseous filaments (with gas clearly approaching
-that critical level of $n_{gas} \gtrsim 10^6$ (see Figure \ref{Fig:ProjectionEnd}) in the centre of the halo)
+that critical level of $n_{gas} \gtrsim 10^6  \ \rm{cm}^{-3}$ (see Figure \ref{Fig:ProjectionEnd}) in the centre of the halo)
 which may help to supply
 the necessary ram pressure and extract orbital energy. A further build up of dense gas would potentially
-help to promote efficient frictional forces even allowing for radiative feedback. }
-What then does this mean for potential gravitational wave detection?\\
-\indent Within approximately 4 Myr after the formation of the first massive stars here there
+help to promote efficient frictional forces even allowing for radiative feedback.}
+
+\subsubsection*{What then does this mean for potential gravitational wave detection?}
+
+\noindent Within approximately 4 Myr after the formation of the first massive stars here there
 will be a population of black hole seeds with masses in the range 300 \msolar (upper limit of pair
 instability supernovae) up to 6000 \msolar
 (and likely higher). In Figure \ref{Fig:Sensitivity} we plot the characteristic strain
 expected from the merger of two black holes with masses of 5000 \msolar each at $z = 15$
 we note that here that gravitational recoil effects can eject black holes from galactic
-centres \citep[e.g.][]{Gultekin_2006}, \textbf{however we consider the case of a binary black hole
-merger with a mass ratio, $q = 1$ and hence in this case ejections can be avoided \citep{Holley-Bockelmann_2008}.}
+centres \citep[e.g.][]{Gultekin_2006}, \textbf{however we consider the idealised case of a non-spinning
+  binary black hole merger with a mass ratio, $q = 1$ and hence in this
+  idealised case ejections
+  can be avoided \citep{Holley-Bockelmann_2008, Morawski_2018, Dunn_2020}.}
 These masses are consistent with the masses of the stars found in this simulation and black holes
 with similar masses are expected from the direct collapse of these massive PopIII
 stars \citep{Heger_2003}. The merger of two black holes with these masses will produce a
@@ -1195,11 +1193,21 @@ neglected the in-situ models as described here which could increase the numbers 
 discoverable by LISA significantly. This point was previously investigated by
 \cite{Hartwig_2018} as a method to discriminate between seed formation scenarios. Further,
 investigation of the number density of in-situ mergers and how they could influence the number
-of detections by LISA is now underway (Arridge et al. in prep). \textbf{The merger of less
+of detections by LISA is now underway (O'Brennan et al. in prep). \textbf{The merger of less
   massive black holes ($\rm{M_{BH} \sim 1000}$ \msolarc) that are produced in these environments
   may also be detectable by 3rd generation, ground based, GW observatories. An exploration of their
   potential is outside the scope of this discussion but see \cite{Valiante_2020} for more details.}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%FIGURE 12%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+   \centering 
+\includegraphics[width=0.525\textwidth]{FIGURES/Sensitivity.pdf}
+\caption{The LISA sensitivity curve with the strain due to two massive black holes each with a mass
+  of 5000 \msolarc. The merger of two 5000~\msolar black holes at $z = 15$ gives a
+  signal to noise ratio of 32 that is visible by LISA. The inspiral will enter the LISA band at
+  approximately $5 \times 10^{-4}$ Hz, corresponding to a time to merger of approximately 2 months.}
+\label{Fig:Sensitivity}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion and Conclusions} \label{Sec:Discussion}
 The aim of this study was to examine the prospect of (super-)massive star formation in haloes
 that are exposed to moderate LW radiation and also experience significant dynamical heating
